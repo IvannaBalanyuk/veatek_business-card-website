@@ -1,0 +1,38 @@
+:root {
+	scrollbar-color: var(--scrollbar-dark-color) var(--scrollbar-light-color);
+	scrollbar-width: 12px;
+}
+
+@-moz-document url-prefix() {
+	:root {
+		scrollbar-color: var(--scrollbar-light-color) var(--scrollbar-dark-color);
+	}
+}
+
+body {
+  min-width: 320px;
+  max-width: 1440px;
+  min-height: 100vh;
+	padding: 0;
+	margin: 0 auto;
+	box-sizing: border-box;
+
+  display: flex;
+	flex-direction: column;
+	align-items: center;
+	
+	color: var(--text-primary-color);
+  background-color: var(--background-color);
+}
+
+body::-webkit-scrollbar {
+	width: 12px;
+}
+body::-webkit-scrollbar-track {
+	background: var(--scrollbar-dark-color);
+}
+body::-webkit-scrollbar-thumb {
+	background: var(--scrollbar-light-color);
+	border: 3px solid var(--scrollbar-dark-color);
+	border-radius: 6px;
+}

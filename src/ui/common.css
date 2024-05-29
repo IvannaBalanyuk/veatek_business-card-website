@@ -1,0 +1,143 @@
+:root {
+	--offset-base-variable: 2px;
+	--offset-base-size: 4px;
+
+	--background-color: #1f2d38;
+	--border-color: #656f77;
+	--text-primary-color: #f7f9fa;
+	--text-inactive-color: #656f77;
+	--text-accent-color: #257f7d;
+	--scrollbar-light-color: #656f77;
+	--scrollbar-dark-color: #2F2F37;
+
+	--common-transition: all .3s ease-in;
+}
+
+.custom-scroll::-webkit-scrollbar {
+	width: 12px;
+}
+.custom-scroll::-webkit-scrollbar-track {
+	background: var(--scrollbar-dark-color);
+}
+.custom-scroll::-webkit-scrollbar-thumb {
+	background: var(--scrollbar-light-color);
+	border: 3px solid var(--scrollbar-dark-color);
+	border-radius: 6px;
+}
+
+/* Typography classes */
+
+.text {
+	margin: 0;
+	padding: 0;
+}
+
+.text_type_main-default {
+	font-family: 'Gotham Pro';
+	font-size: 18px;
+	line-height: 1.5;
+	font-weight: normal;
+}
+
+.text_type_main-xl {
+	font-family: 'Gotham Pro';
+	font-size: 42px;	
+	font-weight: bold;
+	line-height: 1.1;
+}
+
+.text_type_main-l {
+	font-family: 'Gotham Pro';
+	font-size: 26px;
+	font-weight: bold;
+	line-height: 1.25;
+}
+
+.text_type_main-m {
+	font-family: 'Gotham Pro';
+	font-weight: normal;
+	font-size: 20px;
+	line-height: 1.25;
+}
+
+.text_type_main-m-bold {
+	font-family: 'Gotham Pro';
+	font-weight: bold;
+	font-size: 20px;
+	line-height: 1.25;
+}
+
+.text_type_main-s {
+	font-family: 'Gotham Pro';
+	font-size: 14px;
+	line-height: 1.43;
+	font-weight: normal;
+}
+
+.text_type_main-s-bold {
+	font-family: 'Gotham Pro';
+	font-size: 14px;
+	line-height: 1.43;
+	font-weight: bold;
+}
+
+.text_type_main-xs {
+	font-family: 'Gotham Pro';
+	font-size: 14px;
+	line-height: 1.43;
+	font-weight: normal;
+}
+
+.text_type_main-xs-bold {
+	font-family: 'Gotham Pro';
+	font-size: 14px;
+	line-height: 1.43;
+	font-weight: bold;
+}
+
+.text_color_inactive {
+	color: var(--text-inactive-color);
+}
+
+.text_type_digits-default {
+	font-family: 'Gotham Pro';
+	font-weight: normal;
+	font-size: 28px;
+	line-height: .86;
+}
+
+.text_type_digits-medium {
+	font-family: 'Gotham Pro';
+	font-weight: normal;
+	font-size: 48px;
+	line-height: .75;
+}
+
+.text_type_digits-large {
+	font-family: 'Gotham Pro';
+	font-weight: normal;
+	font-size: 144px;
+	line-height: .83;
+}
+
+.text_color_primary {
+	color: var(--text-primary-color)
+}
+
+.text_color_inactive {
+	color: var(--text-inactive-color)
+}
+
+.text_color_accent {
+	color: var(--colors-interface-accent)
+}
+
+.noselect {
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Old versions of Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}

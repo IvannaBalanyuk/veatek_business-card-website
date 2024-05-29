@@ -1,0 +1,31 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.map {
+  display: flex;
+  max-width: 1300px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.wrapper_captions {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  column-gap: 20px;
+}
+
+.text {
+  display: flex;
+  align-items: flex-start;
+}
