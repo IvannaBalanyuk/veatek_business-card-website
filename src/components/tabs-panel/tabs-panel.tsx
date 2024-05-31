@@ -17,8 +17,8 @@ type Props = {
 
 const TabsPanel: FC<Props> = React.memo(({ refs, current, setCurrent }) => {
   return (
-    <header className={styles.header}>
-      <div className={`${styles.wrapper}`}>
+    <header className={`${styles.header} container container_type_flex-row w-full`}>
+      <div className={`container container_type_flex-row`}>
         <Tab
           value="aboutCompany"
           active={current === "aboutCompany"}

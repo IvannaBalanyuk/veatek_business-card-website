@@ -15,14 +15,14 @@ const Section: FC<Props> = ({
   children
 }) => {
   return (
-    <div className={styles.section}>
+    <div className={`${styles.section} container container_type_flex-column w-full g-20`}>
       {sectionTitle &&
-        <div className={styles.text_wrapper}>
-          <h2 className={`${styles.text} text text_type_main-xl pt-5`} ref={sectionRef}>
+        <div className={`${styles.text_wrapper} container container_type_flex-column w-full g-10`}>
+          <h2 className={`text text_type_main-xl pt-5`} ref={sectionRef}>
             {sectionTitle}
           </h2>
           {sectionSubtitle &&
-            <h3 className={`${styles.text} text text_type_main-l`}>
+            <h3 className={`text text_type_main-l`}>
               {sectionSubtitle}
             </h3>
           }

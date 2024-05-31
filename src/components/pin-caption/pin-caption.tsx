@@ -11,15 +11,15 @@ const PinCaption: FC<Props> = ({
   children
 }) => {
   return (
-    <div className={styles.container}>
-      <div className={`${styles.wrapper_icon}`}>
+    <div className={`container container_type_flex-row flex-nowrap max-w-6 min-w-4 cg-4`}>
+      <div className={`${styles.icon_wrapper} container container_type_flex-row `}>
         <img
-          className={styles.icon}
+          className={`${styles.icon} image`}
           src={icon}
           alt=''
         />
       </div>
-      <div className={styles.wrapper_text}>
+      <div className={`${styles.text_wrapper} container container_type_flex-column w-full`}>
         {children}
       </div>
     </div>
