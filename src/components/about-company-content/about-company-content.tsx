@@ -1,16 +1,16 @@
 import styles from "./about-company-content.module.css";
 import AboutCompanyCard from "../about-company-card/about-company-card";
-import { ABOUT_IMAGES } from "../../utils/constants";
+import { ICONS, LOGOS } from "../../utils/constants";
 
 const AboutCompanyContent = () => {
   return (
-    <div className={styles.container}>
-      <ul className={styles.wrapper_cards}>
+    <div className={`container container_type_flex-column w-full g-20`}>
+      <ul className={`container container_type_flex-row flex-nowrap w-full g-15`}>
         <li>
           <AboutCompanyCard
             icons={[
-              { src: ABOUT_IMAGES.iconFlag, alt: '' },
-              { src: ABOUT_IMAGES.iconArrows, alt: '' },
+              { src: ICONS.iconFlag, alt: '' },
+              { src: ICONS.iconArrows, alt: '' },
             ]}
           >
             <p className={`${styles.text} text text_type_main-m`}>
@@ -28,7 +28,7 @@ const AboutCompanyContent = () => {
         <li>
           <AboutCompanyCard
             icons={[
-              { src: ABOUT_IMAGES.iconDoc, alt: '' },
+              { src: ICONS.iconDoc, alt: '' },
             ]}
           >
             <p className={`${styles.text} text text_type_main-m`}>
@@ -42,7 +42,7 @@ const AboutCompanyContent = () => {
         <li>
           <AboutCompanyCard
             icons={[
-              { src: ABOUT_IMAGES.iconCoins, alt: '' },
+              { src: ICONS.iconCoins, alt: '' },
             ]}
           >
             <p className={`${styles.text} text text_type_main-m`}>
@@ -56,7 +56,7 @@ const AboutCompanyContent = () => {
         <li>
           <AboutCompanyCard
             icons={[
-              { src: ABOUT_IMAGES.iconHandshake, alt: '' },
+              { src: ICONS.iconHandshake, alt: '' },
             ]}
           >
             <p className={`${styles.text} text text_type_main-m`}>
@@ -68,12 +68,12 @@ const AboutCompanyContent = () => {
           </AboutCompanyCard>
         </li>
       </ul>
-      <ul className={styles.wrapper_cards}>
+      <ul className={`container container_type_flex-row flex-nowrap w-full g-15`}>
         <li>
           <AboutCompanyCard
             icons={[
-              { src: ABOUT_IMAGES.iconCase, alt: '' },
-              { src: ABOUT_IMAGES.iconSearch, alt: '' },
+              { src: ICONS.iconCase, alt: '' },
+              { src: ICONS.iconSearch, alt: '' },
             ]}
           >
             <p className={`${styles.text} text text_type_main-m`}>
@@ -84,7 +84,7 @@ const AboutCompanyContent = () => {
         <li>
           <AboutCompanyCard
             icons={[
-              { src: ABOUT_IMAGES.logoDomRF, alt: 'Логотип Дом РФ' },
+              { src: LOGOS.logoDomRF, alt: 'Логотип Дом РФ' },
             ]}
           >
             <p className={`${styles.text} text text_type_main-m`}>

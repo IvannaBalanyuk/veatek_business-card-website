@@ -94,11 +94,11 @@ const App: FC = () => {
   };
 
   return (
-    <div className={styles.app}>
+    <div className={`${styles.app} container container_type_flex-column`}>
       <TabsPanel refs={refs} current={current} setCurrent={setCurrent} />
-      <div className={styles.container}>
+      <div className={`${styles.container} container container_type_flex-column pt-5`}>
         <ul
-          className={`${styles.list} custom-scroll`}
+          className={`${styles.list} container container_type_flex-column rg-10 pr-4 custom-scroll`}
           onScroll={handleScroll}
           ref={containerRef}
         >

@@ -1,17 +1,42 @@
 :root {
 	--offset-base-variable: 2px;
 	--offset-base-size: 4px;
+	--offset-high-size: 40px;
 
-	--background-color: #1f2d38;
-	--border-color: #656f77;
-	--text-primary-color: #f7f9fa;
-	--text-inactive-color: #656f77;
-	--text-accent-color: #257f7d;
-	--scrollbar-light-color: #656f77;
-	--scrollbar-dark-color: #2F2F37;
+	--background-color: #142a36;
+	--border-color: #5c6871;
+	--text-primary-color: #ffffff;
+	--text-inactive-color: #5c6871;
+	--text-accent-color: #218480;
+	--scrollbar-light-color: #2e3f4a;
+	--scrollbar-dark-color: #203640;
 
 	--common-transition: all .3s ease-in;
 }
+
+/* Background classes */
+
+.bg-color_dark {
+	background-color: #142a36;
+}
+
+.bg-color_medium {
+	background-color: #203640;
+}
+
+.bg-color_light {
+	background-color: #2e3f4a;
+}
+
+.bg-color_primary {
+	background-color: #ffffff;
+}
+
+.bg-color_accent {
+	background-color: #218480;
+}
+
+/* Custom-scroll classes */
 
 .custom-scroll::-webkit-scrollbar {
 	width: 12px;
@@ -24,6 +49,46 @@
 	border: 3px solid var(--scrollbar-dark-color);
 	border-radius: 6px;
 }
+
+/* Container classes */
+
+.container {
+	margin: 0;
+	padding: 0;	
+  box-sizing: border-box;
+}
+
+.container_type_flex-row {
+  display: flex;
+	justify-content: space-between;
+  list-style-type: none;
+}
+
+.container_type_flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style-type: none;
+}
+
+.container_type_grid {
+  display: grid;
+  justify-content: center;
+  list-style-type: none;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 
 /* Typography classes */
 

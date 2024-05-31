@@ -1,61 +1,71 @@
-import React from "react";
 import styles from "./contacts-content.module.css";
 import { IMAGES, ALT_VALUES } from "../../utils/constants";
 
 
 const ContactsContent = () => {
   return (
-    <div className={styles.container}>
-      <ul className={`${styles.wrapper_img} ${styles.wrapper_img_three}`}>
+    <div className={`container container_type_flex-column w-full`}>
+      <ul className={`${styles.list} ${styles.list_first} container container_type_grid cg-4`}>
         <li>
           <img
-            className={styles.image}
+            className={`image`}
             src={IMAGES.collection1}
             alt={ALT_VALUES.recreationCenter}
-          /></li>
+          />
+        </li>
         <li>
           <img
-            className={styles.image}
+            className={`image`}
             src={IMAGES.collection2}
             alt={ALT_VALUES.campus}
-          /></li>
+          />
+        </li>
         <li>
           <img
-            className={styles.image}
+            className={`image`}
             src={IMAGES.collection3}
             alt={ALT_VALUES.someImage}
-          /></li>
+          />
+        </li>
       </ul>
-      <ul className={`${styles.wrapper_img} ${styles.wrapper_img_four}`}>
-        <img
-          className={styles.image}
-          src={IMAGES.collection4}
-          alt={ALT_VALUES.skolkovo}
-        />
-        <img
-          className={styles.image}
-          src={IMAGES.collection5}
-          alt={ALT_VALUES.someImage}
-        />
-        <img
-          className={styles.image}
-          src={IMAGES.collection6}
-          alt={ALT_VALUES.someImage}
-        />
-        <img
-          className={styles.image}
-          src={IMAGES.collection7}
-          alt={ALT_VALUES.someImage}
-        />
+      <ul className={`${styles.list} ${styles.list_second} container container_type_grid cg-4 pt-4`}>
+        <li>
+          <img
+            className={`image`}
+            src={IMAGES.collection4}
+            alt={ALT_VALUES.skolkovo}
+          />
+        </li>
+        <li>
+          <img
+            className={`image`}
+            src={IMAGES.collection5}
+            alt={ALT_VALUES.someImage}
+          />
+        </li>
+        <li>
+          <img
+            className={`image`}
+            src={IMAGES.collection6}
+            alt={ALT_VALUES.someImage}
+          />
+        </li>
+        <li>
+          <img
+            className={`image`}
+            src={IMAGES.collection7}
+            alt={ALT_VALUES.someImage}
+          />
+        </li>
       </ul>
-      <div className={`${styles.text_wrapper} pt-20`}>
-        <p className={`${styles.text} text text_type_main-m-bold`}>
+      <div className={`container container_type_flex-row w-full pt-20`}>
+        <p className={`text text_type_main-m-bold`}>
           ООО «Веатек»
         </p>
-        <p className={`${styles.text} text text_type_main-m-bold`}>
+        <p className={`text text_type_main-m-bold`}>
           info@veatek.ru
         </p>
-        <p className={`${styles.text} text text_type_main-m-bold`}>
+        <p className={`text text_type_main-m-bold`}>
           +7 (919) 968-37-03
         </p>
       </div>
