@@ -1,0 +1,12 @@
+.container {
+  grid-template-rows: max-content;
+  grid-template-columns: 280px 1fr;
+}
+
+.period_wrapper {
+  justify-content: space-between;
+}
+
+.info_wrapper {
+  align-items: center;
+}

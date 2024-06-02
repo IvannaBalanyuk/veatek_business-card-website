@@ -5,14 +5,14 @@ import { MAP_IMAGES, ALT_VALUES } from "../../utils/constants";
 
 const GeographyContent = () => {
   return (
-    <div className={`${styles.container} container container_type_flex-column`}>
+    <div className={`${styles.container} container container_type_flex-column w-full`}>
       <img
         className={`${styles.map} image`}
         src={MAP_IMAGES.map}
         alt={ALT_VALUES.map}
       />
-      <div className={`container container_type_flex-row flex-nowrap cg-5 text text_type_main-s`}>
-        <PinCaption icon={MAP_IMAGES.pinRed}>
+      <div className={`${styles.pins_wrapper} container container_type_flex-row flex-nowrap cg-5 text text_type_main-s`}>
+        <PinCaption icon={MAP_IMAGES.pinRed} size="l">
           <ListItem markColor="white">
             "Лофт квартал" и&nbsp;инновационный центр "Сколково"
           </ListItem>
@@ -23,7 +23,7 @@ const GeographyContent = () => {
             ЦКАД-3,4
           </ListItem>
         </PinCaption>
-        <PinCaption icon={MAP_IMAGES.pinYellow}>
+        <PinCaption icon={MAP_IMAGES.pinYellow} size="m">
           <ListItem markColor="white">
             Кампус мирового&nbsp;уровня в&nbsp;Мурманске
           </ListItem>
@@ -31,22 +31,22 @@ const GeographyContent = () => {
             Центры детского&nbsp;отдыха и&nbsp;образования
           </ListItem>
         </PinCaption>
-        <PinCaption icon={MAP_IMAGES.pinOrange}>
+        <PinCaption icon={MAP_IMAGES.pinOrange} size="s">
           <p className={`text text_type_main-s`}>
             Комплексное развитие территории в&nbsp;Калининграде
           </p>
         </PinCaption>
-        <PinCaption icon={MAP_IMAGES.pinBlue}>
+        <PinCaption icon={MAP_IMAGES.pinBlue} size="xs">
           <p className={`text text_type_main-s`}>
             Обход Тольятти
           </p>
         </PinCaption>
-        <PinCaption icon={MAP_IMAGES.pinGreen}>
+        <PinCaption icon={MAP_IMAGES.pinGreen} size="s">
           <p className={`text text_type_main-s`}>
             Многопрофильные медицинские центры "Медскан"
           </p>
         </PinCaption>
-        <PinCaption icon={MAP_IMAGES.pinPurple}>
+        <PinCaption icon={MAP_IMAGES.pinPurple} size="s">
           <p className={`text text_type_main-s`}>
             Скдадские комплексы "Wildberries"
           </p>

@@ -9,5 +9,6 @@
 }
 
 .text_wrapper {
+  display: block;
   align-items: flex-start;
 }

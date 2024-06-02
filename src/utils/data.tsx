@@ -1,130 +1,230 @@
-import { IMAGES, ICONS } from "./constants";
+import { ReactNode } from "react";
+import { IMAGES, ICONS, ALT_VALUES } from "./constants";
+import ListItem from "../components/list-item/list-item";
 
-type TGMInfo = {
-  period: string;
-  text: string;
-  accent?: string;
+type TPeriod = {
+  start?: string;
+  end?: string;
 };
 
-const GM_INFO: TGMInfo[] = [
+export type TGMInfo = {
+  period: TPeriod;
+  info: ReactNode;
+};
+
+export const GM_INFO: TGMInfo[] = [
   {
-    period: '2010 - 2015',
-    text: 'Отвечал за реализацию крупных проектов по строительству дорог и аэропортов (дороги М-5, М-1, М-4, аэропорты Домодедово и Кольцово), жилой и коммерческой недвижимости',
+    period: {
+      start: '2010',
+      end: '2015',
+    },
+    info: (
+      <p className={`text text_type_main-m`}>
+        Отвечал за&nbsp;реализацию крупных проектов по&nbsp;строительству дорог и&nbsp;аэропортов (дороги М-5, М-1, М-4, аэропорты Домодедово и&nbsp;Кольцово), жилой и&nbsp;коммерческой недвижимости
+      </p>
+    ),
   },
   {
-    period: '2015 - 2021',
-    text: 'Руководил проектированием и строительством ИЦ «Сколково» с общей программой',
-    accent: '&nbsp;более 75 млрд &#8381;',
+    period: {
+      start: '2015',
+      end: '2021',
+    },
+    info: (
+      <p className={`text text_type_main-m`}>
+        Руководил проектированием и&nbsp;строительством ИЦ&nbsp;«Сколково» с&nbsp;общей программой
+        <span className={`text text_type_main-m-bold`}> более 75&nbsp;млрд&nbsp;&#8381;</span>
+      </p>
+    ),
   },
   {
-    period: '2020 - 2021',
-    text: 'Был членом Оргкомитета «Универсиады-2023» в городе Екатеринбург ние инфраструктуры',
+    period: {
+      start: '2020',
+      end: '2021',
+    },
+    info: (
+      <p className={`text text_type_main-m`}>
+        Был членом Оргкомитета «Универсиады-2023» в&nbsp;городе Екатеринбург, отвечал за&nbsp;создание инфраструктуры
+      </p>
+    ),
   },
   {
-    period: '2021 - 2023',
-    text: 'Руководил инвестиционными проектами АО ДСК «Автобан» на сумму',
-    accent: '&nbsp;более 320 млрд &#8381;',
+    period: {
+      start: '2021',
+      end: '2023',
+    },
+    info: (
+      <p className={`text text_type_main-m`}>
+        Руководил инвестиционными проектами АО&nbsp;ДСК&nbsp;«Автобан» на&nbsp;сумму
+        <span className={`text text_type_main-m-bold`}> более 320&nbsp;млрд&nbsp;&#8381;</span>
+      </p>
+    ),
   },
   {
-    period: '2023',
-    text: 'Создал ООО «Веатек» – оператора инфраструктурных проектов',
+    period: {
+      end: '2023',
+    },
+    info: (
+      <p className={`text text_type_main-m`}>
+        Создал ООО&nbsp;«Веатек» – оператора инфраструктурных&nbsp;проектов
+      </p>
+    ),
   },
 ];
 
-type TItem = {
-  text: string;
-  accent?: string;
+export type TImage = {
+  src: string;
+  alt: string;
 };
 
-type TCompletedProjectsInfo = {
-  image: string;
+export type TCompletedProjectsInfo = {
+  image: TImage;
   title: string;
   capex?: string;
   listTitle?: string;
-  list?: TItem[];
-  content?: TItem[];
-}
+  list?: ReactNode[];
+  content?: ReactNode[];
+};
 
-const COMPLETED_PROJECTS_INFO: TCompletedProjectsInfo[] = [
+export const COMPLETED_PROJECTS_INFO: TCompletedProjectsInfo[] = [
   {
-    image: IMAGES.tolyatti,
+    image: {
+      src: IMAGES.tolyatti,
+      alt: ALT_VALUES.tolyatti,
+    },
     title: 'Обход Тольятти',
-    capex: 'CAPEX 140 млрд &#8381;',
+    capex: 'CAPEX 140 млрд. руб.',
     listTitle: 'Привлечено:',
     list: [
-      {
-        text: 'Инфраструктурные облигации',
-        accent: '&nbsp;24 млрд &#8381;',
-      },
-      {
-        text: 'ИБК',
-        accent: '&nbsp;9.1 млрд &#8381;',
-      },
+      (
+        <ListItem>{
+          <p className={`text text_type_main-m`}>
+            Инфраструктурные облигации
+            <span className={`text text_type_main-m-bold`}> 24&nbsp;млрд&nbsp;&#8381;</span>
+          </p>
+        }</ListItem>
+      ),
+      (
+        <ListItem>{
+          <p className={`text text_type_main-m`}>
+            ИБК
+            <span className={`text text_type_main-m-bold`}> 9.1&nbsp;млрд&nbsp;&#8381;</span>
+          </p>
+        }</ListItem>
+      ),
     ],
   },
   {
-    image: IMAGES.ckad,
+    image: {
+      src: IMAGES.ckad,
+      alt: ALT_VALUES.ckad,
+    },
     title: 'ЦКАД-3,4',
-    capex: 'CAPEX 190 млрд &#8381;',
+    capex: 'CAPEX 190 млрд. руб.',
     content: [
-      {
-        text: 'Переход на эксплуатационную фазу',
-      },
-      {
-        text: 'Рефинансирование старшего долга',
-        accent: '&nbsp;40 млрд &#8381;',
-      },
-      {
-        text: 'Погашение старшего долга через ПП',
-        accent: '&nbsp;30 млрд &#8381;',
-      },
+      (
+        <p className={`text text_type_main-m`}>
+          Переход на&nbsp;эксплуатационную фазу
+        </p>
+      ),
+      (
+        <p className={`text text_type_main-m`}>
+          Рефинансирование старшего&nbsp;долга
+          <span className={`text text_type_main-m-bold`}> 40&nbsp;млрд&nbsp;&#8381;</span>
+        </p>
+      ),
+      (
+        <p className={`text text_type_main-m`}>
+          Погашение старшего&nbsp;долга через&nbsp;ПП
+          <span className={`text text_type_main-m-bold`}> 30&nbsp;млрд&nbsp;&#8381;</span>
+        </p>
+      ),
     ]
   },
   {
-    image: IMAGES.skolkovo,
-    title: 'Инновационный центр "Сколково"',
+    image: {
+      src: IMAGES.skolkovo,
+      alt: ALT_VALUES.skolkovo,
+    },
+    title: 'Инновационный центр «Сколково»',
     listTitle: 'Функции:',
     list: [
-      {
-        text: 'Мастер-план 468 Га',
-      },
-      {
-        text: 'Заказчик-застройщик',
-      },
-      {
-        text: 'Генпроектировщик',
-      },
-      {
-        text: 'Генподрядчик',
-      },
-      {
-        text: 'Эксплуатация',
-      },
+      (
+        <ListItem>{
+          <p className={`text text_type_main-m`}>
+            Мастер-план 468&nbsp;Га
+          </p>
+        }</ListItem>
+      ),
+      (
+        <ListItem>{
+          <p className={`text text_type_main-m`}>
+            Заказчик-застройщик
+          </p>
+        }</ListItem>
+      ),
+      (
+        <ListItem>{
+          <p className={`text text_type_main-m`}>
+            Генпроектировщик
+          </p>
+        }</ListItem>
+      ),
+      (
+        <ListItem>{
+          <p className={`text text_type_main-m`}>
+            Генподрядчик
+          </p>
+        }</ListItem>
+      ),
+      (
+        <ListItem>{
+          <p className={`text text_type_main-m`}>
+            Эксплуатация
+          </p>
+        }</ListItem>
+      ),
     ],
     content: [
-      {
-        text: 'Программа строительства',
-        accent: '&nbsp;74 млрд &#8381;',
-      },
+      (
+        <p className={`text text_type_main-m`}>
+          Программа строительства
+          <span className={`text text_type_main-m-bold`}> 74&nbsp;млрд&nbsp;&#8381;</span>
+        </p>
+      ),
     ]
   },
   {
-    image: IMAGES.sberRA,
-    title: 'Сбер-РублевоАрхангельское',
+    image: {
+      src: IMAGES.sberRA,
+      alt: ALT_VALUES.sberRA,
+    }, 
+    title: 'Сбер-Рублево-Архангельское',
     listTitle: 'Функции:',
     list: [
-      {
-        text: 'Мастер-план',
-      },
-      {
-        text: 'Транспортная модель',
-      },
-      {
-        text: 'Проектирование сетей, дорог и благоустройства',
-      },
+      (
+        <ListItem>{
+          <p className={`text text_type_main-m`}>
+            Мастер-план
+          </p>
+        }</ListItem>
+      ),
+      (
+        <ListItem>{
+          <p className={`text text_type_main-m`}>
+            Транспортная модель
+          </p>
+        }</ListItem>
+      ),
+      (
+        <ListItem>{
+          <p className={`text text_type_main-m`}>
+            Проектирование сетей, дорог и&nbsp;благоустройства
+          </p>
+        }</ListItem>
+      ),
     ],
   },
-]
+];
 
 type TItemWithIcon = {
   icon: string;
@@ -133,11 +233,12 @@ type TItemWithIcon = {
 
 type TCategoryItem = {
   category: TItemWithIcon;
-  content: string | TItemWithIcon[];
+  content?: string;
+  contentList?: TItemWithIcon[];
 };
 
-type TCurrentProjectsInfo = {
-  image: string;
+export type TCurrentProjectsInfo = {
+  image: TImage;
   title: string;
   titleExtra?: string[];
   role: TCategoryItem;
@@ -147,18 +248,21 @@ type TCurrentProjectsInfo = {
   cost: TCategoryItem;
 };
 
-const CURRENT_PROJECTS_INFO_A: TCurrentProjectsInfo[] = [
+export const CURRENT_PROJECTS_INFO_A: TCurrentProjectsInfo[] = [
   {
-    image: IMAGES.campus,
+    image: {
+      src: IMAGES.campus,
+      alt: ALT_VALUES.campus,
+    },
     title: 'Кампус мирового уровня в Мурманске',
     role: {
       category: {
         icon: ICONS.iconCheckmarkWhite,
         text: 'Роль в проекте:',
       },
-      content: [
+      contentList: [
         {
-          icon: ICONS.iconFlag,
+          icon: ICONS.iconFlagGreen,
           text: 'Инициатор',
         },
         {
@@ -180,7 +284,7 @@ const CURRENT_PROJECTS_INFO_A: TCurrentProjectsInfo[] = [
         icon: ICONS.iconSquareWhite,
         text: 'Площадь объекта:',
       },
-      content: '98.5 тыс.м &sup2;',
+      content: '98.5 тыс. кв. м.',
     },
     period: {
       category: {
@@ -191,25 +295,28 @@ const CURRENT_PROJECTS_INFO_A: TCurrentProjectsInfo[] = [
     },
     investment: {
       category: {
-        icon: ICONS.iconCoins,
+        icon: ICONS.iconCoinsWhite,
         text: 'Инвестиции в проект:',
       },
-      content: '23.5 млрд &#8381;',
+      content: '23.5 млрд. руб.',
     },
     cost: {
       category: {
-        icon: ICONS.iconCoins,
+        icon: ICONS.iconCoinsWhite,
         text: 'Стоимость строительства:',
       },
-      content: '19.6 млрд &#8381;',
+      content: '19.6 млрд. руб.',
     },
   },
   {
-    image: IMAGES.recreationCenter,
+    image: {
+      src: IMAGES.recreationCenter,
+      alt: ALT_VALUES.recreationCenter,
+    },
     title: 'Создание центров детского отдыха и образования в',
     titleExtra: [
       'Красноярском крае',
-      'Архангельсткой области',
+      'Архангельской области',
       'Мурманской области',
     ],
     role: {
@@ -217,9 +324,9 @@ const CURRENT_PROJECTS_INFO_A: TCurrentProjectsInfo[] = [
         icon: ICONS.iconCheckmarkWhite,
         text: 'Роль в проекте:',
       },
-      content: [
+      contentList: [
         {
-          icon: ICONS.iconFlag,
+          icon: ICONS.iconFlagGreen,
           text: 'Инициатор',
         },
         {
@@ -241,7 +348,7 @@ const CURRENT_PROJECTS_INFO_A: TCurrentProjectsInfo[] = [
         icon: ICONS.iconSquareWhite,
         text: 'Площадь объекта:',
       },
-      content: '41.6 тыс.м &sup2;',
+      content: '41.6 тыс. кв. м.',
     },
     period: {
       category: {
@@ -252,21 +359,24 @@ const CURRENT_PROJECTS_INFO_A: TCurrentProjectsInfo[] = [
     },
     investment: {
       category: {
-        icon: ICONS.iconCoins,
+        icon: ICONS.iconCoinsWhite,
         text: 'Инвестиции в проект:',
       },
-      content: '13.3 млрд &#8381;',
+      content: '13.3 млрд. руб.',
     },
     cost: {
       category: {
-        icon: ICONS.iconCoins,
+        icon: ICONS.iconCoinsWhite,
         text: 'Стоимость строительства:',
       },
-      content: '11.6 млрд &#8381;',
+      content: '11.6 млрд. руб.',
     },
   },
   {
-    image: IMAGES.kaliningrad,
+    image: {
+      src: IMAGES.kaliningrad,
+      alt: ALT_VALUES.kaliningrad,
+    },
     title: 'Комплексное развитие территории в Калининграде',
     titleExtra: [
       'Гостиницы',
@@ -279,9 +389,9 @@ const CURRENT_PROJECTS_INFO_A: TCurrentProjectsInfo[] = [
         icon: ICONS.iconCheckmarkWhite,
         text: 'Роль в проекте:',
       },
-      content: [
+      contentList: [
         {
-          icon: ICONS.iconFlag,
+          icon: ICONS.iconFlagGreen,
           text: 'Инициатор',
         },
         {
@@ -299,42 +409,45 @@ const CURRENT_PROJECTS_INFO_A: TCurrentProjectsInfo[] = [
         icon: ICONS.iconSquareWhite,
         text: 'Площадь объекта:',
       },
-      content: '31 тыс.м &sup2;',
+      content: '31 тыс. кв. м.',
     },
     period: {
       category: {
         icon: ICONS.iconArrowClockWhite,
         text: 'Срок концессии:',
       },
-      content: '',
+      content: '-',
     },
     investment: {
       category: {
-        icon: ICONS.iconCoins,
+        icon: ICONS.iconCoinsWhite,
         text: 'Инвестиции в проект:',
       },
-      content: '11 млрд &#8381;',
+      content: '11 млрд. руб.',
     },
     cost: {
       category: {
-        icon: ICONS.iconCoins,
+        icon: ICONS.iconCoinsWhite,
         text: 'Стоимость строительства:',
       },
-      content: '',
+      content: '-',
     },
   },
 ];
 
-const CURRENT_PROJECTS_INFO_B: TCurrentProjectsInfo[] = [
+export const CURRENT_PROJECTS_INFO_B: TCurrentProjectsInfo[] = [
   {
-    image: IMAGES.skolkovoLoft,
-    title: '"Лофт квартал" на территории инновационного центра "Сколково"',
+    image: {
+      src: IMAGES.skolkovoLoft,
+      alt: ALT_VALUES.skolkovoLoft,
+    },
+    title: '«Лофт квартал» на территории инновационного центра «Сколково»',
     role: {
       category: {
         icon: ICONS.iconCheckmarkWhite,
         text: 'Роль в проекте:',
       },
-      content: [
+      contentList: [
         {
           icon: ICONS.iconCraneGreen,
           text: 'Застройщик',
@@ -346,25 +459,28 @@ const CURRENT_PROJECTS_INFO_B: TCurrentProjectsInfo[] = [
         icon: ICONS.iconSquareWhite,
         text: 'Площадь объекта:',
       },
-      content: '86 тыс.м &sup2;',
+      content: '86 тыс. кв. м.',
     },
     cost: {
       category: {
-        icon: ICONS.iconCoins,
+        icon: ICONS.iconCoinsWhite,
         text: 'Стоимость строительства:',
       },
-      content: '10 млрд &#8381;',
+      content: '10 млрд. руб.',
     },
   },
   {
-    image: IMAGES.medscan,
-    title: 'Создание многопрофильных медицинских центров "Медскан"',
+    image: {
+      src: IMAGES.medscan,
+      alt: ALT_VALUES.medscan,
+    },
+    title: 'Создание многопрофильных медицинских центров «Медскан»',
     role: {
       category: {
         icon: ICONS.iconCheckmarkWhite,
         text: 'Роль в проекте:',
       },
-      content: [
+      contentList: [
         {
           icon: ICONS.iconToolsGreen,
           text: 'Генеральный проектировщик',
@@ -376,19 +492,22 @@ const CURRENT_PROJECTS_INFO_B: TCurrentProjectsInfo[] = [
         icon: ICONS.iconSquareWhite,
         text: 'Площадь объекта:',
       },
-      content: '30 тыс.м &sup2;',
+      content: '30 тыс. кв. м.',
     },
     cost: {
       category: {
-        icon: ICONS.iconCoins,
+        icon: ICONS.iconCoinsWhite,
         text: 'Стоимость строительства:',
       },
-      content: '',
+      content: '-',
     },
   },
   {
-    image: IMAGES.wildberries,
-    title: 'Складские комплексы "Wildberries"',
+    image: {
+      src: IMAGES.wildberries,
+      alt: ALT_VALUES.wildberries,
+    },
+    title: 'Складские комплексы «Wildberries»',
     titleExtra: [
       'Саратовская область',
       'Оренбургская',
@@ -400,7 +519,7 @@ const CURRENT_PROJECTS_INFO_B: TCurrentProjectsInfo[] = [
         icon: ICONS.iconCheckmarkWhite,
         text: 'Роль в проекте:',
       },
-      content: [
+      contentList: [
         {
           icon: ICONS.iconToolsGreen,
           text: 'Генеральный проектировщик',
@@ -412,21 +531,48 @@ const CURRENT_PROJECTS_INFO_B: TCurrentProjectsInfo[] = [
         icon: ICONS.iconSquareWhite,
         text: 'Площадь объекта:',
       },
-      content: '718.1 тыс. м&sup2;',
+      content: '718.1 тыс. кв. м.',
     },
     cost: {
       category: {
-        icon: ICONS.iconCoins,
+        icon: ICONS.iconCoinsWhite,
         text: 'Стоимость строительства:',
       },
-      content: '',
+      content: '-',
     },
   },
 ];
 
-export {
-  GM_INFO,
-  COMPLETED_PROJECTS_INFO,
-  CURRENT_PROJECTS_INFO_A,
-  CURRENT_PROJECTS_INFO_B,
-};
+export const COLLECTION_IMAGES_A: TImage[] = [
+  {
+    src: IMAGES.collection1,
+    alt: ALT_VALUES.recreationCenter,
+  },
+  {
+    src: IMAGES.collection2,
+    alt: ALT_VALUES.campus,
+  },
+  {
+    src: IMAGES.collection3,
+    alt: ALT_VALUES.someImage,
+  },
+];
+
+export const COLLECTION_IMAGES_B: TImage[] = [
+  {
+    src: IMAGES.collection4,
+    alt: ALT_VALUES.skolkovo,
+  },
+  {
+    src: IMAGES.collection5,
+    alt: ALT_VALUES.someImage,
+  },
+  {
+    src: IMAGES.collection6,
+    alt: ALT_VALUES.someImage,
+  },
+  {
+    src: IMAGES.collection7,
+    alt: ALT_VALUES.someImage,
+  },
+];

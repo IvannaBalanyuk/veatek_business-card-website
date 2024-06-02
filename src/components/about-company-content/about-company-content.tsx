@@ -5,7 +5,7 @@ import { ICONS, LOGOS } from "../../utils/constants";
 const AboutCompanyContent = () => {
   return (
     <div className={`container container_type_flex-column w-full g-20`}>
-      <ul className={`container container_type_flex-row flex-nowrap w-full g-15`}>
+      <ul className={`container container_type_flex-row flex-nowrap w-full g-5`}>
         <li>
           <AboutCompanyCard
             icons={[

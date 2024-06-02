@@ -147,6 +147,9 @@
 
 /* height */
 
+.h-full {
+  height: 100%;
+}
 .h-1 {
   height: var(--offset-high-size);
 }

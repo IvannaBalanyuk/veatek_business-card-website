@@ -6,5 +6,10 @@
 }
 
 .map {
-  max-width: 1300px;
+  align-self: center;
+  max-width: 1200px;
+}
+
+.pins_wrapper {
+  justify-content: space-between;
 }

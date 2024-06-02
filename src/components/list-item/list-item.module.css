@@ -9,7 +9,7 @@
   border-radius: 50%;
   background-color: var(--text-accent-color);
   position: absolute;
-  left: -12px;
+  left: -20px;
   top: 6px;
 }
 
@@ -26,4 +26,9 @@
   position: absolute;
   left: -12px;
   top: 6px;
+}
+
+.image {
+  width: 24px;
+  height: 24px;
 }

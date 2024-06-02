@@ -1,9 +1,23 @@
 .section {
-  min-height: 800px;
+  min-height: 790px;
   position: relative;
 }
 
-.text_wrapper {
-  align-items: flex-start;
+.container {
+  align-items: center;
+}
+
+.title_wrapper {
   z-index: 2;
+}
+
+.image_wrapper {
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--border-color);
+  border-radius: 50%;
+}
+
+.image {
+  border-radius: 50%;
 }

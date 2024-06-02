@@ -1,11 +1,11 @@
 :root {
-	scrollbar-color: var(--scrollbar-dark-color) var(--scrollbar-light-color);
+	scrollbar-color: var(--background-medium-color) var(--background-light-color);
 	scrollbar-width: 12px;
 }
 
 @-moz-document url-prefix() {
 	:root {
-		scrollbar-color: var(--scrollbar-light-color) var(--scrollbar-dark-color);
+		scrollbar-color: var(--background-light-color) var(--background-medium-color);
 	}
 }
 
@@ -22,17 +22,17 @@ body {
 	align-items: center;
 	
 	color: var(--text-primary-color);
-  background-color: var(--background-color);
+  background-color: var(--background-dark-color);
 }
 
 body::-webkit-scrollbar {
 	width: 12px;
 }
 body::-webkit-scrollbar-track {
-	background: var(--scrollbar-dark-color);
+	background: var(--background-medium-color);
 }
 body::-webkit-scrollbar-thumb {
-	background: var(--scrollbar-light-color);
-	border: 3px solid var(--scrollbar-dark-color);
+	background: var(--background-light-color);
+	border: 3px solid var(--background-medium-color);
 	border-radius: 6px;
 }
