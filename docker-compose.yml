@@ -1,9 +1,0 @@
-services:
-  frontend:
-    container_name: veatek-website
-    build:
-      dockerfile: Dockerfile
-    image: veatek-website-image
-    ports:
-      - 8081:80
-    restart: on-failure

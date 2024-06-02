@@ -1,8 +1,20 @@
+const dotenv = require('dotenv');
+
+dotenv.config({ path: './.env' });
+
+const {
+  DEPLOY_USER, DEPLOY_HOST, DEPLOY_PATH, DEPLOY_REF, DEPLOY_REPOSITORY,
+} = process.env;
+
 module.exports = {
-  apps: [
-    {
-    name: 'veatek-website',
-    script: 'dist/src/main.js',
+  deploy: {
+    production: {
+      user: DEPLOY_USER,
+      host: DEPLOY_HOST,
+      ref: DEPLOY_REF,
+      repo: DEPLOY_REPOSITORY,
+      path: DEPLOY_PATH,
+      'post-deploy': 'npm ci && npm run build',
     },
-  ],
+  },
 };
