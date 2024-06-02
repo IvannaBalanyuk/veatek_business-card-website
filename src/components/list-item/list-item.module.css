@@ -1,0 +1,34 @@
+.item_green {
+  position: relative;
+}
+
+.item_green::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--text-accent-color);
+  position: absolute;
+  left: -20px;
+  top: 6px;
+}
+
+.item_white {
+  position: relative;
+}
+
+.item_white::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--text-primary-color);
+  position: absolute;
+  left: -12px;
+  top: 6px;
+}
+
+.image {
+  width: 24px;
+  height: 24px;
+}

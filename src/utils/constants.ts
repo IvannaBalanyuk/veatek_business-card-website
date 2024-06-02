@@ -5,6 +5,7 @@ import collection4 from "../images/collection4.png";
 import collection5 from "../images/collection5.png";
 import collection6 from "../images/collection6.png";
 import collection7 from "../images/collection7.png";
+
 import campus from "../images/campus.png";
 import ckad from "../images/ckad.png";
 import kaliningrad from "../images/kaliningrad.png";
@@ -24,15 +25,52 @@ import iconCoins from "../images/about-company/icon_circle_coins.png";
 import iconDoc from "../images/about-company/icon_circle_doc.png";
 import iconFlag from "../images/about-company/icon_circle_flag.png";
 import iconHandshake from "../images/about-company/icon_circle_handshake.png";
-import logoDomRF from "../images/about-company/logo_dom_rf.png";
+import iconArrowsGreen from "../images/icons/icon_bg_arrows.png";
+import iconCoinsGreen from "../images/icons/icon_bg_coins.png";
+import iconCraneGreen from "../images/icons/icon_bg_crane.png";
+import iconFlagGreen from "../images/icons/icon_bg_flag.png";
+import iconStampGreen from "../images/icons/icon_bg_stamp.png";
+import iconToolsGreen from "../images/icons/icon_bg_tools.png";
+import iconArrowClockWhite from "../images/icons/icon_bw_arrow_clock.png";
+import iconCheckmarkWhite from "../images/icons/icon_bw_checkmark.png";
+import iconCoinsWhite from "../images/icons/icon_bw_coins.png";
+import iconSquareWhite from "../images/icons/icon_bw_square.png";
+import iconPerson from "../images/icons/icon_person.png";
 
-import map from "../images/map/map.png";
-import pinBlue from "../images/map/pin_blue.png";
-import pinGreen from "../images/map/pin_green3.png";
-import pinOrange from "../images/map/pin_orange.png";
-import pinPurple from "../images/map/pin_purple.png";
-import pinRed from "../images/map/pin_red3.png";
-import pinYellow from "../images/map/pin_yellow.png";
+import logoVeatek from "../images/logos/logo_veatek.png";
+import logoDomRF from "../images/logos/logo_dom_rf.png";
+import logoRosatom from "../images/logos/logo_rosatom.png";
+import logoRoscamps from "../images/logos/logo_roscamps.png";
+import logoTurismRF from "../images/logos/logo_turism_rf.png";
+
+import map from "../images/map-images/map.png";
+import pinBlue from "../images/map-images/pin_blue.png";
+import pinGreen from "../images/map-images/pin_green3.png";
+import pinOrange from "../images/map-images/pin_orange.png";
+import pinPurple from "../images/map-images/pin_purple.png";
+import pinRed from "../images/map-images/pin_red3.png";
+import pinYellow from "../images/map-images/pin_yellow.png";
+
+export const ICONS = {
+  iconCase,
+  iconSearch,
+  iconArrows,
+  iconCoins,
+  iconDoc,
+  iconFlag,
+  iconHandshake,
+  iconArrowsGreen,
+  iconCoinsGreen,
+  iconCraneGreen,
+  iconFlagGreen,
+  iconStampGreen,
+  iconToolsGreen,
+  iconArrowClockWhite,
+  iconCheckmarkWhite,
+  iconCoinsWhite,
+  iconSquareWhite,
+  iconPerson,
+}
 
 export const IMAGES = {
   collection1,
@@ -55,15 +93,12 @@ export const IMAGES = {
   gmPhoto,
 }
 
-export const ABOUT_IMAGES = {
-  iconCase,
-  iconSearch,
-  iconArrows,
-  iconCoins,
-  iconDoc,
-  iconFlag,
-  iconHandshake,
+export const LOGOS = {
+  logoVeatek,
   logoDomRF,
+  logoRosatom,
+  logoRoscamps,
+  logoTurismRF,
 }
 
 export const MAP_IMAGES = {

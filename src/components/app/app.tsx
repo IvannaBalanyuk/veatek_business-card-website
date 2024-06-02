@@ -3,9 +3,18 @@ import styles from "./app.module.css";
 import TabsPanel from "../tabs-panel/tabs-panel";
 import Section from "../section/section";
 import LeadContent from "../lead-content/lead-content";
-import ContactsContent from "../contacts-content/contacts-content";
 import AboutCompanyContent from "../about-company-content/about-company-content";
+import CompletedProjectsContent from "../completed-projects-content/completed-projects-content";
 import GeographyContent from "../geography-content/geography-content";
+import GeneralManagerContent from "../general-manager-content/general-manager-content";
+import ContactsContent from "../contacts-content/contacts-content";
+import { IMAGES, ALT_VALUES } from "../../utils/constants";
+import {
+  COMPLETED_PROJECTS_INFO,
+  CURRENT_PROJECTS_INFO_A,
+  CURRENT_PROJECTS_INFO_B
+} from "../../utils/data";
+import CurrentProjectsContent from "../current-projects-content/current-projects-content";
 
 const App: FC = () => {
   const [current, setCurrent] = useState("aboutCompany");
@@ -94,11 +103,11 @@ const App: FC = () => {
   };
 
   return (
-    <div className={styles.app}>
+    <div className={`${styles.app} container container_type_flex-column`}>
       <TabsPanel refs={refs} current={current} setCurrent={setCurrent} />
-      <div className={styles.container}>
+      <div className={`${styles.container} container container_type_flex-column pt-10`}>
         <ul
-          className={`${styles.list} custom-scroll`}
+          className={`${styles.list} container container_type_flex-column rg-10 pr-4 custom-scroll`}
           onScroll={handleScroll}
           ref={containerRef}
         >
@@ -114,11 +123,20 @@ const App: FC = () => {
           <Section
             sectionTitle="Крупнейшие реализованные проекты"
             sectionRef={refs.completedProjects}
-          />
+          >
+            <CompletedProjectsContent projectsData={COMPLETED_PROJECTS_INFO}/>
+          </Section>
           <Section
             sectionTitle="Портфель проектов 2024"
             sectionRef={refs.currentProjects}
-          />
+          >
+            <CurrentProjectsContent projectsData={CURRENT_PROJECTS_INFO_A}/>
+          </Section>
+          <Section
+            sectionTitle="Портфель проектов 2024"
+          >
+            <CurrentProjectsContent projectsData={CURRENT_PROJECTS_INFO_B}/>
+          </Section>
           <Section
             sectionTitle="География проектов"
             sectionRef={refs.geography}
@@ -128,8 +146,14 @@ const App: FC = () => {
           <Section
             sectionTitle="Савченко Алексей Сергеевич"
             sectionSubtitle="Генеральный директор"
+            image={{
+              src: IMAGES.gmPhoto,
+              alt: ALT_VALUES.someImage,
+            }}
             sectionRef={refs.generalManager}
-          />
+          >
+            <GeneralManagerContent/>
+          </Section>
           <Section
             sectionTitle="Контакты"
             sectionRef={refs.contacts}

@@ -1,29 +1,82 @@
 :root {
 	--offset-base-variable: 2px;
 	--offset-base-size: 4px;
+	--offset-high-size: 40px;
 
-	--background-color: #1f2d38;
-	--border-color: #656f77;
-	--text-primary-color: #f7f9fa;
-	--text-inactive-color: #656f77;
-	--text-accent-color: #257f7d;
-	--scrollbar-light-color: #656f77;
-	--scrollbar-dark-color: #2F2F37;
+	--background-dark-color: #142a36;
+	--background-medium-color: #203640;
+	--background-light-color: #2e3f4a;
+
+	--border-color: #5c6871;
+	
+	--text-primary-color: #ffffff;
+	--text-inactive-color: #5c6871;
+	--text-accent-color: #218480;
 
 	--common-transition: all .3s ease-in;
 }
+
+.bg-gradient_type_medium {
+  background-image: linear-gradient(90deg, var(--background-dark-color), var(--background-medium-color));
+}
+
+.bg-gradient_type_light {
+  background-image: linear-gradient(90deg, var(--background-medium-color), var(--background-light-color));
+}
+
+/* Custom-scroll classes */
 
 .custom-scroll::-webkit-scrollbar {
 	width: 12px;
 }
 .custom-scroll::-webkit-scrollbar-track {
-	background: var(--scrollbar-dark-color);
+	background: var(--background-medium-color);
 }
 .custom-scroll::-webkit-scrollbar-thumb {
-	background: var(--scrollbar-light-color);
-	border: 3px solid var(--scrollbar-dark-color);
+	background: var(--background-light-color);
+	border: 3px solid var(--background-medium-color);
 	border-radius: 6px;
 }
+
+/* Container classes */
+
+.container {
+	margin: 0;
+	padding: 0;	
+  box-sizing: border-box;
+}
+
+.container_type_flex-row {
+  display: flex;
+  list-style-type: none;
+}
+
+.container_type_flex-column {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+}
+
+.container_type_grid {
+  display: grid;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.image {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
 
 /* Typography classes */
 
@@ -40,6 +93,13 @@
 }
 
 .text_type_main-xl {
+	font-family: 'Gotham Pro';
+	font-size: 42px;	
+	font-weight: normal;
+	line-height: 1.1;
+}
+
+.text_type_main-xl-bold {
 	font-family: 'Gotham Pro';
 	font-size: 42px;	
 	font-weight: bold;
