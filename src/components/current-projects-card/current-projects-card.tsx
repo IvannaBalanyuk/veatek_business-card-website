@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import styles from './current-projects-card.module.css';
 import ListItem from '../list-item/list-item';
-import { TCurrentProjectsInfo } from '../../utils/data';
+import { TCurrentProjectsInfo } from '../../utils/types';
 
 type TProps = {
   cardData: TCurrentProjectsInfo;
@@ -9,25 +9,23 @@ type TProps = {
 
 const CurrentProjectsCard: FC<TProps> = ({ cardData }) => {
   return (
-    <div className={`container container_type_flex-column`}>
-      <div className={`container container_type_flex-column rg-3 h-9 bg-gradient_type_medium`}>
+    <div className={`${styles.container} container`}>
+      <div className={`${styles.heading_wrapper} container bg-gradient_type_medium`}>
         <img
-          className={`image h-5`}
+          className={`${styles.image} image`}
           src={cardData.image.src}
           alt={cardData.image.alt || 'Изображение'}
         />
-        <div className={`container container_type_flex-column rg-3`}>
-          <h3 className={`container container_type_flex-row text text_type_main-l`}>
+        <div className={`${styles.title_wrapper} container`}>
+          <h3 className={`${styles.title} container text text_type_bold`}>
             {cardData.title}
           </h3>
           {cardData.titleExtra &&
-            <div className={`container container_type_flex-row flex-wrap`}>
+            <div className={`${styles.title_extra} container text text_type_normal`}>
               {cardData.titleExtra.map(item => {
                 return (
                   <ListItem extraClass='w-5'>
-                    <span className={`text text_type_main-s`}>
-                      {item}
-                    </span>
+                    <span>{item}</span>
                   </ListItem>
                 )
               })}
@@ -35,98 +33,94 @@ const CurrentProjectsCard: FC<TProps> = ({ cardData }) => {
           }
         </div>
       </div>
-      <div className={`container container_type_flex-column`}>
-        <div className={`${styles.wrapper} container container_type_flex-row cg-4 h-3 pt-1 pb-1`}>
-          <div className={`${styles.wrapper} container container_type_flex-row cg-2 w-5`}>
+      <div className={`${styles.categories_wrapper} container`}>
+        <div className={`${styles.role_category_wrapper} container`}>
+          <div className={`${styles.category_name_wrapper} container text text_type_normal`}>
             <img
             src={cardData.role.category.icon}
             alt=''
-            className={`${styles.image} image`}
+            className={`${styles.icon} image`}
             />
-            <span className={`text text_type_main-s`}>
-              {cardData.role.category.text}
-            </span>
+            <span>{cardData.role.category.text}</span>
           </div>
-          <div className={`container container_type_flex-column`}>
+          <div className={`${styles.role_content_wrapper} container text text_type_normal`}>
             {cardData.role.contentList && cardData.role.contentList.map(item => {
               return (
                 <ListItem icon={item.icon}>
-                  <span className={`text text_type_main-s`}>
-                    {item.text}
-                  </span>
+                  <span>{item.text}</span>
                 </ListItem>
               )
             })}
           </div>
         </div>
-        <div className={`${styles.wrapper} container container_type_flex-row cg-4 pt-1 pb-1 bg-gradient_type_medium`}>
-          <div className={`${styles.wrapper} container container_type_flex-row cg-2 w-5`}>
+        <div className={`${styles.category_wrapper} container bg-gradient_type_medium`}>
+          <div className={`${styles.category_name_wrapper} container text text_type_normal`}>
             <img
             src={cardData.area.category.icon}
             alt=''
-            className={`${styles.image} image`}
+            className={`${styles.icon} image`}
             />
-            <span className={`text text_type_main-s`}>
+            <span>
               {cardData.area.category.text}
             </span>
           </div>
           {cardData.area.content && (
-            <span className={`text text_type_main-m-bold`}>
+            <span className={`${styles.category_content} text text_type_bold`}>
               {cardData.area.content}
             </span>
           )}
         </div>
         {cardData.period && (
-          <div className={`${styles.wrapper} container container_type_flex-row cg-4 pt-1 pb-1`}>
-            <div className={`${styles.wrapper} container container_type_flex-row cg-2 w-5`}>
+          <div className={`${styles.category_wrapper} container`}>
+            <div className={`${styles.category_name_wrapper} container text text_type_normal`}>
               <img
               src={cardData.period.category.icon}
               alt=''
-              className={`${styles.image} image`}
+              className={`${styles.icon} image`}
               />
-              <span className={`text text_type_main-s`}>
+              <span>
                 {cardData.period.category.text}
               </span>
             </div>
             {cardData.period.content && (
-              <span className={`text text_type_main-m-bold`}>
+            <span className={`${styles.category_content} text text_type_bold`}>
                 {cardData.period.content}
               </span>
             )}
           </div>
         )}
         {cardData.investment && (
-          <div className={`${styles.wrapper} container container_type_flex-row cg-4 pt-1 pb-1 bg-gradient_type_medium`}>
-            <div className={`${styles.wrapper} container container_type_flex-row cg-2 w-5`}>
+          <div className={`${styles.category_wrapper} container bg-gradient_type_medium`}>
+            <div className={`${styles.category_name_wrapper} container text text_type_normal`}>
               <img
               src={cardData.investment.category.icon}
               alt=''
-              className={`${styles.image} image`}
+              className={`${styles.icon} image`}
               />
-              <span className={`text text_type_main-s`}>
+              <span>
                 {cardData.investment.category.text}
               </span>
             </div>
             {cardData.investment.content && (
-              <span className={`text text_type_main-m-bold`}>
+            <span className={`${styles.category_content} text text_type_bold`}>
                 {cardData.investment.content}
               </span>
             )}
           </div>
         )}
-        <div className={`${styles.wrapper} container container_type_flex-row cg-4 pt-1 pb-1`}>
-            <div className={`${styles.wrapper} container container_type_flex-row cg-2 w-5`}>
+        <div className={`${styles.category_wrapper} container`}>
+            <div className={`${styles.category_name_wrapper} container text text_type_normal`}>
               <img
               src={cardData.cost.category.icon}
               alt=''
-              className={`${styles.image} image`}
+              className={`${styles.icon} image`}
               />
-              <span className={`text text_type_main-s`}>
+              <span>
                 {cardData.cost.category.text}
               </span>
             </div>
             {cardData.cost.content && (
-              <span className={`text text_type_main-m-bold`}>
+            <span className={`${styles.category_content} text text_type_bold`}>
                 {cardData.cost.content}
               </span>
             )}

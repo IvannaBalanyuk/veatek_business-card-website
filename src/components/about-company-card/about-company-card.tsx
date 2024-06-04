@@ -16,22 +16,22 @@ const AboutCompanyCard: FC<Props> = ({
   children
 }) => {
   return (
-    <div className={`container container_type_flex-column min-w-7 pt-10`}>
-      <div className={`${styles.container} container container_type_flex-row`}>
+    <li className={`${styles.card} container`}>
+      <div className={`${styles.icons_wrapper} container`}>
         {icons.map((icon) => {
           return (
             <img
-              className={`image h-3 min-w-3`}
+              className={`${styles.icon} image`}
               src={icon.src}
               alt={icon.alt || ''}
             />
           )
         })}
       </div>
-      <div className={`container container_type_flex-row pt-8`}>
+      <div className={`${styles.content_wrapper} container`}>
         {children}
       </div>
-    </div>
+    </li>
   );
 };
 

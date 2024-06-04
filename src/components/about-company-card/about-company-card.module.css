@@ -1,3 +1,51 @@
-.container {
+.card {
+  min-height: calc(var(--offset-base-four) * 55);
+  display: flex;
+  flex-direction: column;
+}
+
+.icons_wrapper {
+  display: flex;
   justify-content: center;
+}
+
+.icon {
+  min-width: calc(var(--offset-base-four-by-ten) * 3);
+  height: calc(var(--offset-base-four-by-ten) * 3);
+}
+
+.content_wrapper {
+  display: flex;
+  justify-content: center;
+  padding-top: calc(var(--offset-base-four) * 8);
+  font-size: calc(var(--offset-base-two) * 9);
+  line-height: 1.25;
+}
+
+@media screen and (max-width: 1040px) {
+  .card {
+    min-width: calc(var(--offset-base-four-by-ten) * 5);
+  }
+
+  .icon {
+    min-width: calc(var(--offset-base-four-by-ten) * 2);
+    height: calc(var(--offset-base-four-by-ten) * 2);
+  }
+
+  .content_wrapper {
+    padding-top: calc(var(--offset-base-four) * 6);
+    font-size: calc(var(--offset-base-two) * 8);
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .card {
+    width: calc(var(--offset-base-four-by-ten) * 7);
+    min-height: calc(var(--offset-base-four) * 40);
+  }
+
+  .icon {
+    min-width: calc(var(--offset-base-four-by-ten) * 2);
+    height: calc(var(--offset-base-four-by-ten) * 2);
+  }
 }

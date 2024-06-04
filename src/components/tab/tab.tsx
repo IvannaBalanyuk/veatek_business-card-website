@@ -14,10 +14,7 @@ const Tab: FC<
         {
             tab_type_current: active,
         },
-        'pt-4',
-        'pr-10',
-        'pb-4',
-        'pl-10',
+        'container',
         'noselect'
     );
 
@@ -29,7 +26,7 @@ const Tab: FC<
 
     return (
         <div className={className} onClick={onClick}>
-            <span className="text text_type_main-default">{children}</span>
+            <span className={`${styles.text} text text_type_normal`}>{children}</span>
         </div>
     );
 };

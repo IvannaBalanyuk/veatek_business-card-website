@@ -1,15 +1,20 @@
 .container {
-  position: absolute;
-  top: 0;
-  left: 0;
+  margin-top: -80px;
+  display: flex;
+  flex-direction: column;
   z-index: 0;
 }
 
 .map {
+  padding-bottom: calc(var(--offset-base-four) * 5);
   align-self: center;
-  max-width: 1200px;
+  width: 100%;
 }
 
 .pins_wrapper {
+  display: flex;
   justify-content: space-between;
+  gap: calc(var(--offset-base-four) * 5);
+  font-size: calc(var(--offset-base-two) * 6);
+  line-height: 1.25;
 }
