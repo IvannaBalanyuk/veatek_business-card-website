@@ -5,16 +5,16 @@ import { MAP_IMAGES, ALT_VALUES } from "../../utils/constants";
 
 const GeographyContent = () => {
   return (
-    <div className={`${styles.container} container container_type_flex-column w-full`}>
+    <div className={`${styles.container} container`}>
       <img
         className={`${styles.map} image`}
         src={MAP_IMAGES.map}
         alt={ALT_VALUES.map}
       />
-      <div className={`${styles.pins_wrapper} container container_type_flex-row flex-nowrap cg-5 text text_type_main-s`}>
+      <div className={`${styles.pins_wrapper} container text text_type_normal`}>
         <PinCaption icon={MAP_IMAGES.pinRed} size="l">
           <ListItem markColor="white">
-            "Лофт квартал" и&nbsp;инновационный центр "Сколково"
+            «Лофт квартал» и&nbsp;инновационный центр «Сколково»
           </ListItem>
           <ListItem markColor="white">
             Сбер-Рублево-Архангельское
@@ -32,24 +32,16 @@ const GeographyContent = () => {
           </ListItem>
         </PinCaption>
         <PinCaption icon={MAP_IMAGES.pinOrange} size="s">
-          <p className={`text text_type_main-s`}>
-            Комплексное развитие территории в&nbsp;Калининграде
-          </p>
+          <p>Комплексное развитие территории в&nbsp;Калининграде</p>
         </PinCaption>
         <PinCaption icon={MAP_IMAGES.pinBlue} size="xs">
-          <p className={`text text_type_main-s`}>
-            Обход Тольятти
-          </p>
+          <p>Обход Тольятти</p>
         </PinCaption>
         <PinCaption icon={MAP_IMAGES.pinGreen} size="s">
-          <p className={`text text_type_main-s`}>
-            Многопрофильные медицинские центры "Медскан"
-          </p>
+          <p>Многопрофильные медицинские центры «Медскан»</p>
         </PinCaption>
         <PinCaption icon={MAP_IMAGES.pinPurple} size="s">
-          <p className={`text text_type_main-s`}>
-            Скдадские комплексы "Wildberries"
-          </p>
+          <p>Скдадские комплексы «Wildberries»</p>
         </PinCaption>
       </div>
     </div>

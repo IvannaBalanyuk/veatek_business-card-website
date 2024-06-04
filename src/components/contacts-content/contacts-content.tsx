@@ -4,16 +4,16 @@ import GridImageCollection from "../grid-image-collection/grid-image-collection"
 
 const ContactsContent = () => {
   return (
-    <div className={`container container_type_flex-column w-full`}>
+    <div className={`${styles.container} container`}>
       <GridImageCollection/>
-      <div className={`${styles.container} container container_type_flex-row w-full pt-20`}>
-        <p className={`text text_type_main-m-bold`}>
+      <div className={`${styles.wrapper} container`}>
+        <p className={`text text_type_normal`}>
           ООО «Веатек»
         </p>
-        <p className={`text text_type_main-m-bold`}>
+        <p className={`text text_type_normal`}>
           info@veatek.ru
         </p>
-        <p className={`text text_type_main-m-bold`}>
+        <p className={`text text_type_normal`}>
           +7 (919) 968-37-03
         </p>
       </div>

@@ -1,6 +1,6 @@
 import React, { FC, ReactNode } from "react";
 import styles from "./section.module.css";
-import { TImage } from "../../utils/data";
+import { TImage } from "../../utils/types";
 
 type Props = {
   sectionTitle?: string;
@@ -18,24 +18,24 @@ const Section: FC<Props> = ({
   children
 }) => {
   return (
-    <div className={`${styles.section} container container_type_flex-column pb-10`}>
+    <div className={`${styles.section} container w-full`}>
       {sectionTitle &&
-        <div className={`${styles.container} container container_type_flex-row pb-10 cg-10`} ref={sectionRef}>
+        <div className={`${styles.heading} container`} ref={sectionRef}>
           {image && (
-            <div className={`${styles.image_wrapper} container container_type_flex-row w-7 h-7`}>
+            <div className={`${styles.image_wrapper} container`}>
               <img
-                className={`${styles.image} image w-6 h-6`}
+                className={`${styles.image} image`}
                 src={image.src}
                 alt={image.alt}
               />
             </div>
           )}
-          <div className={`${styles.title_wrapper} container container_type_flex-column`}>
-            <h2 className={`text text_type_main-xl-bold`}>
+          <div className={`${styles.title_wrapper} container`}>
+            <h2 className={`${styles.title_text} text text_type_bold`}>
               {sectionTitle}
             </h2>
             {sectionSubtitle &&
-              <h3 className={`text text_type_main-l pt-10`}>
+              <h3 className={`${styles.subtitle_text} text text_type_normal`}>
                 {sectionSubtitle}
               </h3>
             }

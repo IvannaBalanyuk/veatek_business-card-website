@@ -4,19 +4,19 @@ import GridImageCollection from "../grid-image-collection/grid-image-collection"
 
 const LeadContent = () => {
   return (
-    <>
+    <div className={`${styles.container} container`}>
       <GridImageCollection/>
-      <div className={`${styles.wrapper} container container_type_flex-row w-full cg-10 pt-10`}>
+      <div className={`${styles.title_wrapper} container`}>
         <img
           className={`${styles.logo} image`}
           src={LOGOS.logoVeatek}
           alt={ALT_VALUES.someImage}
         />
-        <h2 className={`text text_type_main-l max-w-13`}>
+        <h2 className={`${styles.title} text text_type_bold`}>
           федеральный&nbsp;оператор инфраструктурных&nbsp;проектов
         </h2>
       </div>
-    </>
+    </div>
   );
 };
 

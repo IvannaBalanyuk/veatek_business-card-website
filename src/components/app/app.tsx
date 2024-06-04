@@ -23,7 +23,6 @@ const App: FC = () => {
   const aboutCompanyRef = useRef<HTMLDivElement>(null);
   const completedProjectsRef = useRef<HTMLDivElement>(null);
   const currentProjectsRef = useRef<HTMLDivElement>(null);
-  const geographyRef = useRef<HTMLDivElement>(null);
   const generalManagerRef = useRef<HTMLDivElement>(null);
   const contactsRef = useRef<HTMLDivElement>(null);
 
@@ -31,14 +30,12 @@ const App: FC = () => {
     aboutCompany: React.RefObject<HTMLDivElement>;
     completedProjects: React.RefObject<HTMLDivElement>;
     currentProjects: React.RefObject<HTMLDivElement>;
-    geography: React.RefObject<HTMLDivElement>;
     generalManager: React.RefObject<HTMLDivElement>;
     contacts: React.RefObject<HTMLDivElement>;
   } = {
     aboutCompany: aboutCompanyRef,
     completedProjects: completedProjectsRef,
     currentProjects: currentProjectsRef,
-    geography: geographyRef,
     generalManager: generalManagerRef,
     contacts: contactsRef,
   };
@@ -67,12 +64,6 @@ const App: FC = () => {
         refs.currentProjects.current.getBoundingClientRect().top - containerScroll;
     }
 
-    let geographyScroll;
-    if (refs.geography && refs.geography.current && containerScroll) {
-      geographyScroll =
-        refs.geography.current.getBoundingClientRect().top - containerScroll;
-    }
-
     let generalManagerScroll;
     if (refs.generalManager && refs.generalManager.current && containerScroll) {
       generalManagerScroll =
@@ -93,8 +84,6 @@ const App: FC = () => {
       setCurrent("completedProjects");
     } else if (currentProjectsScroll && currentProjectsScroll <= 0 && currentProjectsScroll > maxOffset) {
       setCurrent("currentProjects");
-    } else if (geographyScroll && geographyScroll <= 0 && geographyScroll > maxOffset) {
-      setCurrent("geography");
     } else if (generalManagerScroll && generalManagerScroll <= 0 && generalManagerScroll > maxOffset) {
       setCurrent("generalManager");
     } else if (contactsScroll && contactsScroll <= 0 && contactsScroll > maxOffset) {
@@ -103,11 +92,13 @@ const App: FC = () => {
   };
 
   return (
-    <div className={`${styles.app} container container_type_flex-column`}>
-      <TabsPanel refs={refs} current={current} setCurrent={setCurrent} />
-      <div className={`${styles.container} container container_type_flex-column pt-10`}>
+    <>
+      <header className={`${styles.header} container w-full`}>
+        <TabsPanel refs={refs} current={current} setCurrent={setCurrent} />
+      </header>
+      <main className={`${styles.content} container`}>
         <ul
-          className={`${styles.list} container container_type_flex-column rg-10 pr-4 custom-scroll`}
+          className={`${styles.sections_container} container list custom-scroll`}
           onScroll={handleScroll}
           ref={containerRef}
         >
@@ -137,12 +128,11 @@ const App: FC = () => {
           >
             <CurrentProjectsContent projectsData={CURRENT_PROJECTS_INFO_B}/>
           </Section>
-          <Section
-            sectionTitle="География проектов"
-            sectionRef={refs.geography}
-          >
-            <GeographyContent />
-          </Section>
+          <div className={`${styles.wrapper_mobile_hidden} container`}>
+            <Section sectionTitle="География проектов">
+              <GeographyContent />
+            </Section>
+          </div>
           <Section
             sectionTitle="Савченко Алексей Сергеевич"
             sectionSubtitle="Генеральный директор"
@@ -161,8 +151,8 @@ const App: FC = () => {
             <ContactsContent />
           </Section>
         </ul>
-      </div>
-    </div>
+      </main>
+    </>
   );
 };
 

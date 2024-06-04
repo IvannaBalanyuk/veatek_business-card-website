@@ -1,16 +1,98 @@
-import { ReactNode } from "react";
-import { IMAGES, ICONS, ALT_VALUES } from "./constants";
 import ListItem from "../components/list-item/list-item";
+import {
+  TImage,
+  TGMInfo,
+  TAboutCompanyInfo,
+  TCompletedProjectsInfo,
+  TCurrentProjectsInfo,
+} from "./types";
+import {
+  IMAGES,
+  ICONS,
+  ALT_VALUES,
+  LOGOS
+} from "./constants";
 
-type TPeriod = {
-  start?: string;
-  end?: string;
-};
+export const ABOUT_COMPANY_INFO_A: TAboutCompanyInfo[] = [
+  {
+    icons: [
+      { src: ICONS.iconFlag, alt: '' },
+      { src: ICONS.iconArrows, alt: '' },
+    ],
+    content: (
+      <p className={`text text_type_normal text_type_align-center`}>
+        <span className={`text text_type_bold`}>
+          Инициатор&nbsp;
+        </span>
+        и&nbsp;
+        <span className={`text text_type_bold`}>
+          оператор полного цикла&nbsp;
+        </span>
+        проектов государственно-частного партнерства
+      </p>
+    ),
+  },
+  {
+    icons: [
+      { src: ICONS.iconDoc, alt: '' },
+    ],
+    content: (
+      <p className={`text text_type_normal text_type_align-center`}>
+        <span className={`text text_type_bold`}>Учредитель </span>в&nbsp;специальных проектных компаниях
+      </p>
+    ),
+  },
+  {
+    icons: [
+      { src: ICONS.iconCase, alt: '' },
+      { src: ICONS.iconSearch, alt: '' },
+    ],
+    content: (
+      <p className={`text text_type_normal text_type_align-center`}>
+        Подтвержденный опыт и&nbsp;глубокая экспертиза в&nbsp;реализации проектов социальной, образовательной и&nbsp;транспортной инфраструктуры с&nbsp;государственным участием
+      </p>
+    ),
+  },
+];
 
-export type TGMInfo = {
-  period: TPeriod;
-  info: ReactNode;
-};
+export const ABOUT_COMPANY_INFO_B: TAboutCompanyInfo[] = [
+  {
+    icons: [
+      { src: ICONS.iconCoins, alt: '' },
+    ],
+    content: (
+      <p className={`text text_type_normal text_type_align-center`}>
+        <span className={`text text_type_bold`}>
+          Провайдер&nbsp;
+        </span>
+        капитала, акционерных займов и&nbsp;младшего долга
+      </p>
+    ),
+  },
+  {
+    icons: [
+      { src: ICONS.iconHandshake, alt: '' },
+    ],
+    content: (
+      <p className={`text text_type_normal text_type_align-center`}>
+        <span className={`text text_type_bold`}>
+          Партнер&nbsp;
+        </span>
+        в&nbsp;операционных компаниях-застройщиках
+      </p>
+    ),
+  },
+  {
+    icons: [
+      { src: LOGOS.logoDomRF, alt: 'Логотип Дом РФ' },
+    ],
+    content: (
+      <p className={`text text_type_normal text_type_align-center`}>
+        Использование государственных финансовых мер поддержки при&nbsp;структурировании проекта и&nbsp;привлечении финансирования
+      </p>
+    ),
+  },
+];
 
 export const GM_INFO: TGMInfo[] = [
   {
@@ -19,7 +101,7 @@ export const GM_INFO: TGMInfo[] = [
       end: '2015',
     },
     info: (
-      <p className={`text text_type_main-m`}>
+      <p className={`text text_type_normal`}>
         Отвечал за&nbsp;реализацию крупных проектов по&nbsp;строительству дорог и&nbsp;аэропортов (дороги М-5, М-1, М-4, аэропорты Домодедово и&nbsp;Кольцово), жилой и&nbsp;коммерческой недвижимости
       </p>
     ),
@@ -30,9 +112,9 @@ export const GM_INFO: TGMInfo[] = [
       end: '2021',
     },
     info: (
-      <p className={`text text_type_main-m`}>
+      <p className={`text text_type_normal`}>
         Руководил проектированием и&nbsp;строительством ИЦ&nbsp;«Сколково» с&nbsp;общей программой
-        <span className={`text text_type_main-m-bold`}> более 75&nbsp;млрд&nbsp;&#8381;</span>
+        <span className={`text text_type_bold`}> более 75&nbsp;млрд.&nbsp;руб.</span>
       </p>
     ),
   },
@@ -42,7 +124,7 @@ export const GM_INFO: TGMInfo[] = [
       end: '2021',
     },
     info: (
-      <p className={`text text_type_main-m`}>
+      <p className={`text text_type_normal`}>
         Был членом Оргкомитета «Универсиады-2023» в&nbsp;городе Екатеринбург, отвечал за&nbsp;создание инфраструктуры
       </p>
     ),
@@ -53,9 +135,9 @@ export const GM_INFO: TGMInfo[] = [
       end: '2023',
     },
     info: (
-      <p className={`text text_type_main-m`}>
+      <p className={`text text_type_normal`}>
         Руководил инвестиционными проектами АО&nbsp;ДСК&nbsp;«Автобан» на&nbsp;сумму
-        <span className={`text text_type_main-m-bold`}> более 320&nbsp;млрд&nbsp;&#8381;</span>
+        <span className={`text text_type_bold`}> более 320&nbsp;млрд.&nbsp;руб.</span>
       </p>
     ),
   },
@@ -64,26 +146,12 @@ export const GM_INFO: TGMInfo[] = [
       end: '2023',
     },
     info: (
-      <p className={`text text_type_main-m`}>
+      <p className={`text text_type_normal`}>
         Создал ООО&nbsp;«Веатек» – оператора инфраструктурных&nbsp;проектов
       </p>
     ),
   },
 ];
-
-export type TImage = {
-  src: string;
-  alt: string;
-};
-
-export type TCompletedProjectsInfo = {
-  image: TImage;
-  title: string;
-  capex?: string;
-  listTitle?: string;
-  list?: ReactNode[];
-  content?: ReactNode[];
-};
 
 export const COMPLETED_PROJECTS_INFO: TCompletedProjectsInfo[] = [
   {
@@ -97,17 +165,17 @@ export const COMPLETED_PROJECTS_INFO: TCompletedProjectsInfo[] = [
     list: [
       (
         <ListItem>{
-          <p className={`text text_type_main-m`}>
+          <p className={`text text_type_normal`}>
             Инфраструктурные облигации
-            <span className={`text text_type_main-m-bold`}> 24&nbsp;млрд&nbsp;&#8381;</span>
+            <span className={`text text_type_bold`}> 24&nbsp;млрд.&nbsp;руб.</span>
           </p>
         }</ListItem>
       ),
       (
         <ListItem>{
-          <p className={`text text_type_main-m`}>
+          <p className={`text text_type_normal`}>
             ИБК
-            <span className={`text text_type_main-m-bold`}> 9.1&nbsp;млрд&nbsp;&#8381;</span>
+            <span className={`text text_type_bold`}> 9.1&nbsp;млрд.&nbsp;руб.</span>
           </p>
         }</ListItem>
       ),
@@ -122,20 +190,20 @@ export const COMPLETED_PROJECTS_INFO: TCompletedProjectsInfo[] = [
     capex: 'CAPEX 190 млрд. руб.',
     content: [
       (
-        <p className={`text text_type_main-m`}>
+        <p className={`text text_type_normal`}>
           Переход на&nbsp;эксплуатационную фазу
         </p>
       ),
       (
-        <p className={`text text_type_main-m`}>
+        <p className={`text text_type_normal`}>
           Рефинансирование старшего&nbsp;долга
-          <span className={`text text_type_main-m-bold`}> 40&nbsp;млрд&nbsp;&#8381;</span>
+          <span className={`text text_type_bold`}> 40&nbsp;млрд.&nbsp;руб.</span>
         </p>
       ),
       (
-        <p className={`text text_type_main-m`}>
+        <p className={`text text_type_normal`}>
           Погашение старшего&nbsp;долга через&nbsp;ПП
-          <span className={`text text_type_main-m-bold`}> 30&nbsp;млрд&nbsp;&#8381;</span>
+          <span className={`text text_type_bold`}> 30&nbsp;млрд.&nbsp;руб.</span>
         </p>
       ),
     ]
@@ -150,35 +218,35 @@ export const COMPLETED_PROJECTS_INFO: TCompletedProjectsInfo[] = [
     list: [
       (
         <ListItem>{
-          <p className={`text text_type_main-m`}>
+          <p className={`text text_type_normal`}>
             Мастер-план 468&nbsp;Га
           </p>
         }</ListItem>
       ),
       (
         <ListItem>{
-          <p className={`text text_type_main-m`}>
+          <p className={`text text_type_normal`}>
             Заказчик-застройщик
           </p>
         }</ListItem>
       ),
       (
         <ListItem>{
-          <p className={`text text_type_main-m`}>
+          <p className={`text text_type_normal`}>
             Генпроектировщик
           </p>
         }</ListItem>
       ),
       (
         <ListItem>{
-          <p className={`text text_type_main-m`}>
+          <p className={`text text_type_normal`}>
             Генподрядчик
           </p>
         }</ListItem>
       ),
       (
         <ListItem>{
-          <p className={`text text_type_main-m`}>
+          <p className={`text text_type_normal`}>
             Эксплуатация
           </p>
         }</ListItem>
@@ -186,9 +254,9 @@ export const COMPLETED_PROJECTS_INFO: TCompletedProjectsInfo[] = [
     ],
     content: [
       (
-        <p className={`text text_type_main-m`}>
+        <p className={`text text_type_normal`}>
           Программа строительства
-          <span className={`text text_type_main-m-bold`}> 74&nbsp;млрд&nbsp;&#8381;</span>
+          <span className={`text text_type_bold`}> 74&nbsp;млрд.&nbsp;руб.</span>
         </p>
       ),
     ]
@@ -203,21 +271,21 @@ export const COMPLETED_PROJECTS_INFO: TCompletedProjectsInfo[] = [
     list: [
       (
         <ListItem>{
-          <p className={`text text_type_main-m`}>
+          <p className={`text text_type_normal`}>
             Мастер-план
           </p>
         }</ListItem>
       ),
       (
         <ListItem>{
-          <p className={`text text_type_main-m`}>
+          <p className={`text text_type_normal`}>
             Транспортная модель
           </p>
         }</ListItem>
       ),
       (
         <ListItem>{
-          <p className={`text text_type_main-m`}>
+          <p className={`text text_type_normal`}>
             Проектирование сетей, дорог и&nbsp;благоустройства
           </p>
         }</ListItem>
@@ -225,28 +293,6 @@ export const COMPLETED_PROJECTS_INFO: TCompletedProjectsInfo[] = [
     ],
   },
 ];
-
-type TItemWithIcon = {
-  icon: string;
-  text: string;
-};
-
-type TCategoryItem = {
-  category: TItemWithIcon;
-  content?: string;
-  contentList?: TItemWithIcon[];
-};
-
-export type TCurrentProjectsInfo = {
-  image: TImage;
-  title: string;
-  titleExtra?: string[];
-  role: TCategoryItem;
-  area: TCategoryItem;
-  period?: TCategoryItem;
-  investment?: TCategoryItem;
-  cost: TCategoryItem;
-};
 
 export const CURRENT_PROJECTS_INFO_A: TCurrentProjectsInfo[] = [
   {
@@ -510,7 +556,7 @@ export const CURRENT_PROJECTS_INFO_B: TCurrentProjectsInfo[] = [
     title: 'Складские комплексы «Wildberries»',
     titleExtra: [
       'Саратовская область',
-      'Оренбургская',
+      'Оренбургская область',
       'Орловская область',
       'Челябинская область',
     ],
@@ -574,5 +620,31 @@ export const COLLECTION_IMAGES_B: TImage[] = [
   {
     src: IMAGES.collection7,
     alt: ALT_VALUES.someImage,
+  },
+];
+
+export const COLLECTION_IMAGES_TABLET: TImage[] = [
+  {
+    src: IMAGES.collection1,
+    alt: ALT_VALUES.recreationCenter,
+  },
+  {
+    src: IMAGES.collection2,
+    alt: ALT_VALUES.campus,
+  },
+  {
+    src: IMAGES.collection3,
+    alt: ALT_VALUES.someImage,
+  },
+  {
+    src: IMAGES.collection4,
+    alt: ALT_VALUES.skolkovo,
+  },
+];
+
+export const COLLECTION_IMAGES_MOBILE: TImage[] = [
+  {
+    src: IMAGES.collection4,
+    alt: ALT_VALUES.skolkovo,
   },
 ];

@@ -19,15 +19,15 @@ const PinCaption: FC<Props> = ({
     l: 'max-w-7',
   }
   return (
-    <div className={`container container_type_flex-row flex-nowrap cg-3`}>
-      <div className={`${styles.icon_wrapper} container container_type_flex-row w-1`}>
+    <div className={`${styles.container} container`}>
+      <div className={`${styles.icon_wrapper} container`}>
         <img
           className={`${styles.icon} image`}
           src={icon}
           alt=''
         />
       </div>
-      <div className={`${styles.text_wrapper} ${width[size]} container container_type_flex-column`}>
+      <div className={`${styles.text_wrapper} ${width[size]} container`}>
         {children}
       </div>
     </div>

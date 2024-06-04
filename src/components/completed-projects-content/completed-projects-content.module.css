@@ -1,5 +1,21 @@
 .container {
   display: grid;
-  grid-template-rows: 640px;
-  grid-template-columns: repeat(4, minmax(200px, 1fr));
+  grid-template-rows: max-content;
+  grid-template-columns: repeat(4, minmax(calc(var(--offset-base-four-by-ten) * 5), 1fr));
+  gap: calc(var(--offset-base-four) * 4);
+}
+
+@media screen and (max-width: 1040px) {
+  .container {
+    grid-template-rows: repeat(2, calc(var(--offset-base-four-by-ten) * 15));
+    grid-template-columns: repeat(2, minmax(calc(var(--offset-base-four-by-ten) * 6), 1fr));
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .container {
+    grid-template-rows: repeat(4, max-content);
+    grid-template-columns: minmax(calc(var(--offset-base-four-by-ten) * 6), 1fr);
+    gap: calc(var(--offset-base-four) * 15);
+  }
 }

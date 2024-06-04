@@ -7,7 +7,6 @@ type Props = {
     aboutCompany: React.RefObject<HTMLDivElement>;
     completedProjects: React.RefObject<HTMLDivElement>;
     currentProjects: React.RefObject<HTMLDivElement>;
-    geography: React.RefObject<HTMLDivElement>;
     generalManager: React.RefObject<HTMLDivElement>;
     contacts: React.RefObject<HTMLDivElement>;
   };
@@ -17,8 +16,8 @@ type Props = {
 
 const TabsPanel: FC<Props> = React.memo(({ refs, current, setCurrent }) => {
   return (
-    <header className={`${styles.header} container container_type_flex-row w-full`}>
-      <div className={`container container_type_flex-row`}>
+    <>
+      <div className={`${styles.tabs_panel_desk} container`}>
         <Tab
           value="aboutCompany"
           active={current === "aboutCompany"}
@@ -65,21 +64,6 @@ const TabsPanel: FC<Props> = React.memo(({ refs, current, setCurrent }) => {
           Проекты 2024
         </Tab>
         <Tab
-          value="geography"
-          active={current === "geography"}
-          onClick={() => {
-            setCurrent("geography");
-            if (refs.geography && refs.geography.current) {
-              refs.geography.current.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-              });
-            }
-          }}
-        >
-          География проектов
-        </Tab>
-        <Tab
           value="generalManager"
           active={current === "generalManager"}
           onClick={() => {
@@ -110,7 +94,54 @@ const TabsPanel: FC<Props> = React.memo(({ refs, current, setCurrent }) => {
           Контакты
         </Tab>
       </div>
-    </header>
+      <div className={`${styles.tabs_panel_mob} container`}>
+        <Tab
+          value="aboutCompany"
+          active={current === "aboutCompany"}
+          onClick={() => {
+            setCurrent("aboutCompany");
+            if (refs.aboutCompany && refs.aboutCompany.current) {
+              refs.aboutCompany.current.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
+          }}
+        >
+          О компании
+        </Tab>
+        <Tab
+          value="completedProjects"
+          active={current === "completedProjects"}
+          onClick={() => {
+            setCurrent("completedProjects");
+            if (refs.completedProjects && refs.completedProjects.current) {
+              refs.completedProjects.current.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
+          }}
+        >
+          Проекты
+        </Tab>
+        <Tab
+          value="contacts"
+          active={current === "contacts"}
+          onClick={() => {
+            setCurrent("contacts");
+            if (refs.contacts && refs.contacts.current) {
+              refs.contacts.current.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
+          }}
+        >
+          Контакты
+        </Tab>
+      </div>
+    </>
   );
 });
 

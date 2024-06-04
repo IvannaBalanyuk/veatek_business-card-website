@@ -1,5 +1,23 @@
 .container {
   display: grid;
-  grid-template-rows: 700px;
-  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  align-content: center;
+  grid-template-rows: max-content;
+  grid-template-columns: repeat(3, minmax(calc(var(--offset-base-four-by-ten) * 7), 1fr));
+  gap: calc(var(--offset-base-four) * 6);
+}
+
+@media screen and (max-width: 1040px) {
+  .container {
+    grid-template-rows: max-content;
+    grid-template-columns: repeat(3, minmax(calc(var(--offset-base-four-by-ten) * 5), 1fr));
+    gap: calc(var(--offset-base-four) * 2);
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .container {
+    grid-template-rows: repeat(3, max-content);
+    grid-template-columns: minmax(calc(var(--offset-base-four-by-ten) * 7), 1fr);
+    gap: calc(var(--offset-base-four) * 15);
+  }
 }

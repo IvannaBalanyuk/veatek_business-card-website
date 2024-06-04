@@ -19,14 +19,14 @@ const ListItem: FC<Props> = ({
   return (
     <>
     {!icon && (
-      <li className={`container container_type_flex-row pl-5 ${extraClass}`}>
+      <li className={`${styles.container} container ${extraClass}`}>
         <span className={`${itemStyles}`}>
           {children}
         </span>
       </li>
     )}
     {icon && (
-      <li className={`container container_type_flex-row cg-2`}>
+      <li className={`${styles.container_with_image} container`}>
         <img
         src={icon}
         alt=""

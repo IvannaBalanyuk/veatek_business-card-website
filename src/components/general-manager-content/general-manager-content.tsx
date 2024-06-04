@@ -4,7 +4,7 @@ import { GM_INFO } from "../../utils/data";
 
 const GeneralManagerContent = () => {
   return (
-    <ul className={`container container_type_flex-column rg-8`}>
+    <ul className={`${styles.container} container list`}>
       {GM_INFO.map((item) => {
         return <GeneralManagerCard data={item}/>
       })}
