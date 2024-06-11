@@ -1,20 +1,24 @@
-import React, { FC } from "react";
+/* eslint-disable react/display-name */
+import React, { FC, memo } from "react";
 import styles from "./tabs-panel.module.css";
 import Tab from "../tab/tab";
 
-type Props = {
-  refs: {
-    aboutCompany: React.RefObject<HTMLDivElement>;
-    completedProjects: React.RefObject<HTMLDivElement>;
-    currentProjects: React.RefObject<HTMLDivElement>;
-    generalManager: React.RefObject<HTMLDivElement>;
-    contacts: React.RefObject<HTMLDivElement>;
-  };
+type TRefs = {
+  aboutCompany: React.RefObject<HTMLDivElement>;
+  completedProjects: React.RefObject<HTMLDivElement>;
+  currentProjects: React.RefObject<HTMLDivElement>;
+  generalManager: React.RefObject<HTMLDivElement>;
+  contacts: React.RefObject<HTMLDivElement>;
+};
+
+type TProps = {
+  refs: TRefs;
   current: string | undefined;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   setCurrent: any;
 };
 
-const TabsPanel: FC<Props> = React.memo(({ refs, current, setCurrent }) => {
+const TabsPanel: FC<TProps> = memo(({ refs, current, setCurrent }: TProps) => {
   return (
     <>
       <div className={`${styles.tabs_panel_desk} container`}>

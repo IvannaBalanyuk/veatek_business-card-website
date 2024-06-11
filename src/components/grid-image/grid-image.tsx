@@ -4,7 +4,7 @@ import { TImage } from "../../utils/types";
 
 type TProps = {
   imageData: TImage;
-}
+};
 
 const GridImage: FC<TProps> = ({ imageData }) => {
   return (

@@ -8,7 +8,7 @@ export type TImage = {
 export type TAboutCompanyInfo = {
   icons: TImage[];
   content: ReactNode;
-}
+};
 
 type TPeriod = {
   start?: string;

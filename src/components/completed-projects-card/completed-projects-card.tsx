@@ -1,6 +1,7 @@
 import { FC } from "react";
-import styles from "./completed-projects-card.module.css"
+import styles from "./completed-projects-card.module.css";
 import { TCompletedProjectsInfo } from "../../utils/types";
+import ListItem from "../list-item/list-item";
 
 type TProps = {
   cardData: TCompletedProjectsInfo;
@@ -13,7 +14,7 @@ const CompletedProjectsCard: FC<TProps> = ({ cardData }) => {
         <img
           className={`${styles.image} image`}
           src={cardData.image.src}
-          alt={cardData.image.alt || 'Изображение'}
+          alt={cardData.image.alt || "Изображение"}
         />
         <h3 className={`${styles.title_wrapper} container text text_type_bold`}>
           {cardData.title}
@@ -21,17 +22,23 @@ const CompletedProjectsCard: FC<TProps> = ({ cardData }) => {
       </div>
       <div className={`${styles.content_wrapper} container`}>
         {cardData.capex && (
-          <p className={`${styles.subtitle} text text_type_bold`}>{cardData.capex}</p>
+          <p className={`${styles.subtitle} text text_type_bold`}>
+            {cardData.capex}
+          </p>
         )}
         {cardData.listTitle && (
-          <p className={`${styles.subtitle} text text_type_bold`}>{cardData.listTitle}</p>
+          <p className={`${styles.subtitle} text text_type_bold`}>
+            {cardData.listTitle}
+          </p>
         )}
-        {cardData.list && cardData.list.map(item => {
-          return item;
-        })}
-        {cardData.content && cardData.content.map(item => {
-          return item;
-        })}
+        {cardData.list &&
+          cardData.list.map((item, index) => {
+            return <ListItem key={index}>{item}</ListItem>;
+          })}
+        {cardData.content &&
+          cardData.content.map((item, index) => {
+            return <ListItem key={index}>{item}</ListItem>;
+          })}
       </div>
     </div>
   );

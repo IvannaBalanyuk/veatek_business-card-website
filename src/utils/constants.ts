@@ -70,7 +70,7 @@ export const ICONS = {
   iconCoinsWhite,
   iconSquareWhite,
   iconPerson,
-}
+};
 
 export const IMAGES = {
   collection1,
@@ -91,7 +91,7 @@ export const IMAGES = {
   tolyatti,
   wildberries,
   gmPhoto,
-}
+};
 
 export const LOGOS = {
   logoVeatek,
@@ -99,7 +99,7 @@ export const LOGOS = {
   logoRosatom,
   logoRoscamps,
   logoTurismRF,
-}
+};
 
 export const MAP_IMAGES = {
   map,
@@ -109,7 +109,7 @@ export const MAP_IMAGES = {
   pinPurple,
   pinRed,
   pinYellow,
-}
+};
 
 export const ALT_VALUES = {
   recreationCenter: "Центр детского отдыха и образования, макет",

@@ -9,16 +9,14 @@ type Props = {
 const GeneralManagerCard: FC<Props> = ({ data }) => {
   return (
     <li className={`${styles.container} container`}>
-      <div className={`${styles.period_wrapper} container text text_type_normal`}>
-        <span>{data.period.start || ''}</span>
-        {data.period.start &&
-          <span>-</span>
-        }
-        <span>{data.period.end || ''}</span>
+      <div
+        className={`${styles.period_wrapper} container text text_type_normal`}
+      >
+        <span>{data.period.start || ""}</span>
+        {data.period.start && <span>-</span>}
+        <span>{data.period.end || ""}</span>
       </div>
-      <div className={`${styles.info_wrapper} container`}>
-        {data.info}
-      </div>
+      <div className={`${styles.info_wrapper} container`}>{data.info}</div>
     </li>
   );
 };

@@ -5,7 +5,7 @@ import GridImageCollection from "../grid-image-collection/grid-image-collection"
 const LeadContent = () => {
   return (
     <div className={`${styles.container} container`}>
-      <GridImageCollection/>
+      <GridImageCollection />
       <div className={`${styles.title_wrapper} container`}>
         <img
           className={`${styles.logo} image`}

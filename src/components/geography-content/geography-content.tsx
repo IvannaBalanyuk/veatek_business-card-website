@@ -16,12 +16,8 @@ const GeographyContent = () => {
           <ListItem markColor="white">
             «Лофт квартал» и&nbsp;инновационный центр «Сколково»
           </ListItem>
-          <ListItem markColor="white">
-            Сбер-Рублево-Архангельское
-          </ListItem>
-          <ListItem markColor="white">
-            ЦКАД-3,4
-          </ListItem>
+          <ListItem markColor="white">Сбер-Рублево-Архангельское</ListItem>
+          <ListItem markColor="white">ЦКАД-3,4</ListItem>
         </PinCaption>
         <PinCaption icon={MAP_IMAGES.pinYellow} size="m">
           <ListItem markColor="white">

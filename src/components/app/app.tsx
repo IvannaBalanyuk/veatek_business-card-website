@@ -12,7 +12,7 @@ import { IMAGES, ALT_VALUES } from "../../utils/constants";
 import {
   COMPLETED_PROJECTS_INFO,
   CURRENT_PROJECTS_INFO_A,
-  CURRENT_PROJECTS_INFO_B
+  CURRENT_PROJECTS_INFO_B,
 } from "../../utils/data";
 import CurrentProjectsContent from "../current-projects-content/current-projects-content";
 
@@ -53,21 +53,32 @@ const App: FC = () => {
     }
 
     let completedProjectsScroll;
-    if (refs.completedProjects && refs.completedProjects.current && containerScroll) {
+    if (
+      refs.completedProjects &&
+      refs.completedProjects.current &&
+      containerScroll
+    ) {
       completedProjectsScroll =
-        refs.completedProjects.current.getBoundingClientRect().top - containerScroll;
+        refs.completedProjects.current.getBoundingClientRect().top -
+        containerScroll;
     }
 
     let currentProjectsScroll;
-    if (refs.currentProjects && refs.currentProjects.current && containerScroll) {
+    if (
+      refs.currentProjects &&
+      refs.currentProjects.current &&
+      containerScroll
+    ) {
       currentProjectsScroll =
-        refs.currentProjects.current.getBoundingClientRect().top - containerScroll;
+        refs.currentProjects.current.getBoundingClientRect().top -
+        containerScroll;
     }
 
     let generalManagerScroll;
     if (refs.generalManager && refs.generalManager.current && containerScroll) {
       generalManagerScroll =
-        refs.generalManager.current.getBoundingClientRect().top - containerScroll;
+        refs.generalManager.current.getBoundingClientRect().top -
+        containerScroll;
     }
 
     let contactsScroll;
@@ -78,15 +89,35 @@ const App: FC = () => {
 
     const maxOffset = -30;
 
-    if (aboutCompanyScroll && aboutCompanyScroll <= 0 && aboutCompanyScroll > maxOffset) {
+    if (
+      aboutCompanyScroll &&
+      aboutCompanyScroll <= 0 &&
+      aboutCompanyScroll > maxOffset
+    ) {
       setCurrent("aboutCompany");
-    } else if (completedProjectsScroll && completedProjectsScroll <= 0 && completedProjectsScroll > maxOffset) {
+    } else if (
+      completedProjectsScroll &&
+      completedProjectsScroll <= 0 &&
+      completedProjectsScroll > maxOffset
+    ) {
       setCurrent("completedProjects");
-    } else if (currentProjectsScroll && currentProjectsScroll <= 0 && currentProjectsScroll > maxOffset) {
+    } else if (
+      currentProjectsScroll &&
+      currentProjectsScroll <= 0 &&
+      currentProjectsScroll > maxOffset
+    ) {
       setCurrent("currentProjects");
-    } else if (generalManagerScroll && generalManagerScroll <= 0 && generalManagerScroll > maxOffset) {
+    } else if (
+      generalManagerScroll &&
+      generalManagerScroll <= 0 &&
+      generalManagerScroll > maxOffset
+    ) {
       setCurrent("generalManager");
-    } else if (contactsScroll && contactsScroll <= 0 && contactsScroll > maxOffset) {
+    } else if (
+      contactsScroll &&
+      contactsScroll <= 0 &&
+      contactsScroll > maxOffset
+    ) {
       setCurrent("contacts");
     }
   };
@@ -105,28 +136,23 @@ const App: FC = () => {
           <Section>
             <LeadContent />
           </Section>
-          <Section
-            sectionTitle="Веатек - это:"
-            sectionRef={refs.aboutCompany}
-          >
+          <Section sectionTitle="Веатек - это:" sectionRef={refs.aboutCompany}>
             <AboutCompanyContent />
           </Section>
           <Section
             sectionTitle="Крупнейшие реализованные проекты"
             sectionRef={refs.completedProjects}
           >
-            <CompletedProjectsContent projectsData={COMPLETED_PROJECTS_INFO}/>
+            <CompletedProjectsContent projectsData={COMPLETED_PROJECTS_INFO} />
           </Section>
           <Section
             sectionTitle="Портфель проектов 2024"
             sectionRef={refs.currentProjects}
           >
-            <CurrentProjectsContent projectsData={CURRENT_PROJECTS_INFO_A}/>
+            <CurrentProjectsContent projectsData={CURRENT_PROJECTS_INFO_A} />
           </Section>
-          <Section
-            sectionTitle="Портфель проектов 2024"
-          >
-            <CurrentProjectsContent projectsData={CURRENT_PROJECTS_INFO_B}/>
+          <Section sectionTitle="Портфель проектов 2024">
+            <CurrentProjectsContent projectsData={CURRENT_PROJECTS_INFO_B} />
           </Section>
           <div className={`${styles.wrapper_mobile_hidden} container`}>
             <Section sectionTitle="География проектов">
@@ -142,12 +168,9 @@ const App: FC = () => {
             }}
             sectionRef={refs.generalManager}
           >
-            <GeneralManagerContent/>
+            <GeneralManagerContent />
           </Section>
-          <Section
-            sectionTitle="Контакты"
-            sectionRef={refs.contacts}
-          >
+          <Section sectionTitle="Контакты" sectionRef={refs.contacts}>
             <ContactsContent />
           </Section>
         </ul>

@@ -1,4 +1,4 @@
-import ListItem from "../components/list-item/list-item";
+/* eslint-disable react/jsx-key */
 import {
   TImage,
   TGMInfo,
@@ -6,24 +6,17 @@ import {
   TCompletedProjectsInfo,
   TCurrentProjectsInfo,
 } from "./types";
-import {
-  IMAGES,
-  ICONS,
-  ALT_VALUES,
-  LOGOS
-} from "./constants";
+import { IMAGES, ICONS, ALT_VALUES, LOGOS } from "./constants";
 
 export const ABOUT_COMPANY_INFO_A: TAboutCompanyInfo[] = [
   {
     icons: [
-      { src: ICONS.iconFlag, alt: '' },
-      { src: ICONS.iconArrows, alt: '' },
+      { src: ICONS.iconFlag, alt: "" },
+      { src: ICONS.iconArrows, alt: "" },
     ],
     content: (
       <p className={`text text_type_normal text_type_align-center`}>
-        <span className={`text text_type_bold`}>
-          Инициатор&nbsp;
-        </span>
+        <span className={`text text_type_bold`}>Инициатор&nbsp;</span>
         и&nbsp;
         <span className={`text text_type_bold`}>
           оператор полного цикла&nbsp;
@@ -33,23 +26,24 @@ export const ABOUT_COMPANY_INFO_A: TAboutCompanyInfo[] = [
     ),
   },
   {
-    icons: [
-      { src: ICONS.iconDoc, alt: '' },
-    ],
+    icons: [{ src: ICONS.iconDoc, alt: "" }],
     content: (
       <p className={`text text_type_normal text_type_align-center`}>
-        <span className={`text text_type_bold`}>Учредитель </span>в&nbsp;специальных проектных компаниях
+        <span className={`text text_type_bold`}>Учредитель </span>
+        в&nbsp;специальных проектных компаниях
       </p>
     ),
   },
   {
     icons: [
-      { src: ICONS.iconCase, alt: '' },
-      { src: ICONS.iconSearch, alt: '' },
+      { src: ICONS.iconCase, alt: "" },
+      { src: ICONS.iconSearch, alt: "" },
     ],
     content: (
       <p className={`text text_type_normal text_type_align-center`}>
-        Подтвержденный опыт и&nbsp;глубокая экспертиза в&nbsp;реализации проектов социальной, образовательной и&nbsp;транспортной инфраструктуры с&nbsp;государственным участием
+        Подтвержденный опыт и&nbsp;глубокая экспертиза в&nbsp;реализации
+        проектов социальной, образовательной и&nbsp;транспортной инфраструктуры
+        с&nbsp;государственным участием
       </p>
     ),
   },
@@ -57,38 +51,29 @@ export const ABOUT_COMPANY_INFO_A: TAboutCompanyInfo[] = [
 
 export const ABOUT_COMPANY_INFO_B: TAboutCompanyInfo[] = [
   {
-    icons: [
-      { src: ICONS.iconCoins, alt: '' },
-    ],
+    icons: [{ src: ICONS.iconCoins, alt: "" }],
     content: (
       <p className={`text text_type_normal text_type_align-center`}>
-        <span className={`text text_type_bold`}>
-          Провайдер&nbsp;
-        </span>
+        <span className={`text text_type_bold`}>Провайдер&nbsp;</span>
         капитала, акционерных займов и&nbsp;младшего долга
       </p>
     ),
   },
   {
-    icons: [
-      { src: ICONS.iconHandshake, alt: '' },
-    ],
+    icons: [{ src: ICONS.iconHandshake, alt: "" }],
     content: (
       <p className={`text text_type_normal text_type_align-center`}>
-        <span className={`text text_type_bold`}>
-          Партнер&nbsp;
-        </span>
+        <span className={`text text_type_bold`}>Партнер&nbsp;</span>
         в&nbsp;операционных компаниях-застройщиках
       </p>
     ),
   },
   {
-    icons: [
-      { src: LOGOS.logoDomRF, alt: 'Логотип Дом РФ' },
-    ],
+    icons: [{ src: LOGOS.logoDomRF, alt: "Логотип Дом РФ" }],
     content: (
       <p className={`text text_type_normal text_type_align-center`}>
-        Использование государственных финансовых мер поддержки при&nbsp;структурировании проекта и&nbsp;привлечении финансирования
+        Использование государственных финансовых мер поддержки
+        при&nbsp;структурировании проекта и&nbsp;привлечении финансирования
       </p>
     ),
   },
@@ -97,53 +82,64 @@ export const ABOUT_COMPANY_INFO_B: TAboutCompanyInfo[] = [
 export const GM_INFO: TGMInfo[] = [
   {
     period: {
-      start: '2010',
-      end: '2015',
+      start: "2010",
+      end: "2015",
     },
     info: (
       <p className={`text text_type_normal`}>
-        Отвечал за&nbsp;реализацию крупных проектов по&nbsp;строительству дорог и&nbsp;аэропортов (дороги М-5, М-1, М-4, аэропорты Домодедово и&nbsp;Кольцово), жилой и&nbsp;коммерческой недвижимости
+        Отвечал за&nbsp;реализацию крупных проектов по&nbsp;строительству дорог
+        и&nbsp;аэропортов (дороги М-5, М-1, М-4, аэропорты Домодедово
+        и&nbsp;Кольцово), жилой и&nbsp;коммерческой недвижимости
       </p>
     ),
   },
   {
     period: {
-      start: '2015',
-      end: '2021',
+      start: "2015",
+      end: "2021",
     },
     info: (
       <p className={`text text_type_normal`}>
-        Руководил проектированием и&nbsp;строительством ИЦ&nbsp;«Сколково» с&nbsp;общей программой
-        <span className={`text text_type_bold`}> более 75&nbsp;млрд.&nbsp;руб.</span>
+        Руководил проектированием и&nbsp;строительством ИЦ&nbsp;«Сколково»
+        с&nbsp;общей программой
+        <span className={`text text_type_bold`}>
+          {" "}
+          более 75&nbsp;млрд.&nbsp;руб.
+        </span>
       </p>
     ),
   },
   {
     period: {
-      start: '2020',
-      end: '2021',
+      start: "2020",
+      end: "2021",
     },
     info: (
       <p className={`text text_type_normal`}>
-        Был членом Оргкомитета «Универсиады-2023» в&nbsp;городе Екатеринбург, отвечал за&nbsp;создание инфраструктуры
+        Был членом Оргкомитета «Универсиады-2023» в&nbsp;городе Екатеринбург,
+        отвечал за&nbsp;создание инфраструктуры
       </p>
     ),
   },
   {
     period: {
-      start: '2021',
-      end: '2023',
+      start: "2021",
+      end: "2023",
     },
     info: (
       <p className={`text text_type_normal`}>
-        Руководил инвестиционными проектами АО&nbsp;ДСК&nbsp;«Автобан» на&nbsp;сумму
-        <span className={`text text_type_bold`}> более 320&nbsp;млрд.&nbsp;руб.</span>
+        Руководил инвестиционными проектами АО&nbsp;ДСК&nbsp;«Автобан»
+        на&nbsp;сумму
+        <span className={`text text_type_bold`}>
+          {" "}
+          более 320&nbsp;млрд.&nbsp;руб.
+        </span>
       </p>
     ),
   },
   {
     period: {
-      end: '2023',
+      end: "2023",
     },
     info: (
       <p className={`text text_type_normal`}>
@@ -159,26 +155,18 @@ export const COMPLETED_PROJECTS_INFO: TCompletedProjectsInfo[] = [
       src: IMAGES.tolyatti,
       alt: ALT_VALUES.tolyatti,
     },
-    title: 'Обход Тольятти',
-    capex: 'CAPEX 140 млрд. руб.',
-    listTitle: 'Привлечено:',
+    title: "Обход Тольятти",
+    capex: "CAPEX 140 млрд. руб.",
+    listTitle: "Привлечено:",
     list: [
-      (
-        <ListItem>{
-          <p className={`text text_type_normal`}>
-            Инфраструктурные облигации
-            <span className={`text text_type_bold`}> 24&nbsp;млрд.&nbsp;руб.</span>
-          </p>
-        }</ListItem>
-      ),
-      (
-        <ListItem>{
-          <p className={`text text_type_normal`}>
-            ИБК
-            <span className={`text text_type_bold`}> 9.1&nbsp;млрд.&nbsp;руб.</span>
-          </p>
-        }</ListItem>
-      ),
+      <p className={`text text_type_normal`}>
+        Инфраструктурные облигации
+        <span className={`text text_type_bold`}> 24&nbsp;млрд.&nbsp;руб.</span>
+      </p>,
+      <p className={`text text_type_normal`}>
+        ИБК
+        <span className={`text text_type_bold`}> 9.1&nbsp;млрд.&nbsp;руб.</span>
+      </p>,
     ],
   },
   {
@@ -186,110 +174,56 @@ export const COMPLETED_PROJECTS_INFO: TCompletedProjectsInfo[] = [
       src: IMAGES.ckad,
       alt: ALT_VALUES.ckad,
     },
-    title: 'ЦКАД-3,4',
-    capex: 'CAPEX 190 млрд. руб.',
+    title: "ЦКАД-3,4",
+    capex: "CAPEX 190 млрд. руб.",
     content: [
-      (
-        <p className={`text text_type_normal`}>
-          Переход на&nbsp;эксплуатационную фазу
-        </p>
-      ),
-      (
-        <p className={`text text_type_normal`}>
-          Рефинансирование старшего&nbsp;долга
-          <span className={`text text_type_bold`}> 40&nbsp;млрд.&nbsp;руб.</span>
-        </p>
-      ),
-      (
-        <p className={`text text_type_normal`}>
-          Погашение старшего&nbsp;долга через&nbsp;ПП
-          <span className={`text text_type_bold`}> 30&nbsp;млрд.&nbsp;руб.</span>
-        </p>
-      ),
-    ]
+      <p className={`text text_type_normal`}>
+        Переход на&nbsp;эксплуатационную фазу
+      </p>,
+      <p className={`text text_type_normal`}>
+        Рефинансирование старшего&nbsp;долга
+        <span className={`text text_type_bold`}> 40&nbsp;млрд.&nbsp;руб.</span>
+      </p>,
+      <p className={`text text_type_normal`}>
+        Погашение старшего&nbsp;долга через&nbsp;ПП
+        <span className={`text text_type_bold`}> 30&nbsp;млрд.&nbsp;руб.</span>
+      </p>,
+    ],
   },
   {
     image: {
       src: IMAGES.skolkovo,
       alt: ALT_VALUES.skolkovo,
     },
-    title: 'Инновационный центр «Сколково»',
-    listTitle: 'Функции:',
+    title: "Инновационный центр «Сколково»",
+    listTitle: "Функции:",
     list: [
-      (
-        <ListItem>{
-          <p className={`text text_type_normal`}>
-            Мастер-план 468&nbsp;Га
-          </p>
-        }</ListItem>
-      ),
-      (
-        <ListItem>{
-          <p className={`text text_type_normal`}>
-            Заказчик-застройщик
-          </p>
-        }</ListItem>
-      ),
-      (
-        <ListItem>{
-          <p className={`text text_type_normal`}>
-            Генпроектировщик
-          </p>
-        }</ListItem>
-      ),
-      (
-        <ListItem>{
-          <p className={`text text_type_normal`}>
-            Генподрядчик
-          </p>
-        }</ListItem>
-      ),
-      (
-        <ListItem>{
-          <p className={`text text_type_normal`}>
-            Эксплуатация
-          </p>
-        }</ListItem>
-      ),
+      <p className={`text text_type_normal`}>Мастер-план 468&nbsp;Га</p>,
+      <p className={`text text_type_normal`}>Заказчик-застройщик</p>,
+      <p className={`text text_type_normal`}>Генпроектировщик</p>,
+      <p className={`text text_type_normal`}>Генподрядчик</p>,
+      <p className={`text text_type_normal`}>Эксплуатация</p>,
     ],
     content: [
-      (
-        <p className={`text text_type_normal`}>
-          Программа строительства
-          <span className={`text text_type_bold`}> 74&nbsp;млрд.&nbsp;руб.</span>
-        </p>
-      ),
-    ]
+      <p className={`text text_type_normal`}>
+        Программа строительства
+        <span className={`text text_type_bold`}> 74&nbsp;млрд.&nbsp;руб.</span>
+      </p>,
+    ],
   },
   {
     image: {
       src: IMAGES.sberRA,
       alt: ALT_VALUES.sberRA,
-    }, 
-    title: 'Сбер-Рублево-Архангельское',
-    listTitle: 'Функции:',
+    },
+    title: "Сбер-Рублево-Архангельское",
+    listTitle: "Функции:",
     list: [
-      (
-        <ListItem>{
-          <p className={`text text_type_normal`}>
-            Мастер-план
-          </p>
-        }</ListItem>
-      ),
-      (
-        <ListItem>{
-          <p className={`text text_type_normal`}>
-            Транспортная модель
-          </p>
-        }</ListItem>
-      ),
-      (
-        <ListItem>{
-          <p className={`text text_type_normal`}>
-            Проектирование сетей, дорог и&nbsp;благоустройства
-          </p>
-        }</ListItem>
-      ),
+      <p className={`text text_type_normal`}>Мастер-план</p>,
+      <p className={`text text_type_normal`}>Транспортная модель</p>,
+      <p className={`text text_type_normal`}>
+        Проектирование сетей, дорог и&nbsp;благоустройства
+      </p>,
     ],
   },
 ];
@@ -300,58 +234,58 @@ export const CURRENT_PROJECTS_INFO_A: TCurrentProjectsInfo[] = [
       src: IMAGES.campus,
       alt: ALT_VALUES.campus,
     },
-    title: 'Кампус мирового уровня в Мурманске',
+    title: "Кампус мирового уровня в Мурманске",
     role: {
       category: {
         icon: ICONS.iconCheckmarkWhite,
-        text: 'Роль в проекте:',
+        text: "Роль в проекте:",
       },
       contentList: [
         {
           icon: ICONS.iconFlagGreen,
-          text: 'Инициатор',
+          text: "Инициатор",
         },
         {
           icon: ICONS.iconCraneGreen,
-          text: 'Застройщик',
+          text: "Застройщик",
         },
         {
           icon: ICONS.iconStampGreen,
-          text: 'Концессионер',
+          text: "Концессионер",
         },
         {
           icon: ICONS.iconCoinsGreen,
-          text: 'Инвестор в младший долг',
+          text: "Инвестор в младший долг",
         },
-      ]
+      ],
     },
     area: {
       category: {
         icon: ICONS.iconSquareWhite,
-        text: 'Площадь объекта:',
+        text: "Площадь объекта:",
       },
-      content: '98.5 тыс. кв. м.',
+      content: "98.5 тыс. кв. м.",
     },
     period: {
       category: {
         icon: ICONS.iconArrowClockWhite,
-        text: 'Срок концессии:',
+        text: "Срок концессии:",
       },
-      content: '13 лет',
+      content: "13 лет",
     },
     investment: {
       category: {
         icon: ICONS.iconCoinsWhite,
-        text: 'Инвестиции в проект:',
+        text: "Инвестиции в проект:",
       },
-      content: '23.5 млрд. руб.',
+      content: "23.5 млрд. руб.",
     },
     cost: {
       category: {
         icon: ICONS.iconCoinsWhite,
-        text: 'Стоимость строительства:',
+        text: "Стоимость строительства:",
       },
-      content: '19.6 млрд. руб.',
+      content: "19.6 млрд. руб.",
     },
   },
   {
@@ -359,63 +293,63 @@ export const CURRENT_PROJECTS_INFO_A: TCurrentProjectsInfo[] = [
       src: IMAGES.recreationCenter,
       alt: ALT_VALUES.recreationCenter,
     },
-    title: 'Создание центров детского отдыха и образования в',
+    title: "Создание центров детского отдыха и образования в",
     titleExtra: [
-      'Красноярском крае',
-      'Архангельской области',
-      'Мурманской области',
+      "Красноярском крае",
+      "Архангельской области",
+      "Мурманской области",
     ],
     role: {
       category: {
         icon: ICONS.iconCheckmarkWhite,
-        text: 'Роль в проекте:',
+        text: "Роль в проекте:",
       },
       contentList: [
         {
           icon: ICONS.iconFlagGreen,
-          text: 'Инициатор',
+          text: "Инициатор",
         },
         {
           icon: ICONS.iconCraneGreen,
-          text: 'Застройщик',
+          text: "Застройщик",
         },
         {
           icon: ICONS.iconStampGreen,
-          text: 'Концессионер',
+          text: "Концессионер",
         },
         {
           icon: ICONS.iconCoinsGreen,
-          text: 'Инвестор в младший долг',
+          text: "Инвестор в младший долг",
         },
-      ]
+      ],
     },
     area: {
       category: {
         icon: ICONS.iconSquareWhite,
-        text: 'Площадь объекта:',
+        text: "Площадь объекта:",
       },
-      content: '41.6 тыс. кв. м.',
+      content: "41.6 тыс. кв. м.",
     },
     period: {
       category: {
         icon: ICONS.iconArrowClockWhite,
-        text: 'Срок концессии:',
+        text: "Срок концессии:",
       },
-      content: '20 лет',
+      content: "20 лет",
     },
     investment: {
       category: {
         icon: ICONS.iconCoinsWhite,
-        text: 'Инвестиции в проект:',
+        text: "Инвестиции в проект:",
       },
-      content: '13.3 млрд. руб.',
+      content: "13.3 млрд. руб.",
     },
     cost: {
       category: {
         icon: ICONS.iconCoinsWhite,
-        text: 'Стоимость строительства:',
+        text: "Стоимость строительства:",
       },
-      content: '11.6 млрд. руб.',
+      content: "11.6 млрд. руб.",
     },
   },
   {
@@ -423,60 +357,55 @@ export const CURRENT_PROJECTS_INFO_A: TCurrentProjectsInfo[] = [
       src: IMAGES.kaliningrad,
       alt: ALT_VALUES.kaliningrad,
     },
-    title: 'Комплексное развитие территории в Калининграде',
-    titleExtra: [
-      'Гостиницы',
-      'Экспоцентр',
-      'Медцентр',
-      'Жилая застройка',
-    ],
+    title: "Комплексное развитие территории в Калининграде",
+    titleExtra: ["Гостиницы", "Экспоцентр", "Медцентр", "Жилая застройка"],
     role: {
       category: {
         icon: ICONS.iconCheckmarkWhite,
-        text: 'Роль в проекте:',
+        text: "Роль в проекте:",
       },
       contentList: [
         {
           icon: ICONS.iconFlagGreen,
-          text: 'Инициатор',
+          text: "Инициатор",
         },
         {
           icon: ICONS.iconCraneGreen,
-          text: 'Застройщик',
+          text: "Застройщик",
         },
         {
           icon: ICONS.iconArrowsGreen,
-          text: 'Оператор проекта',
+          text: "Оператор проекта",
         },
-      ]
+      ],
     },
     area: {
       category: {
         icon: ICONS.iconSquareWhite,
-        text: 'Площадь объекта:',
+        text: "Площадь объекта:",
       },
-      content: '31 тыс. кв. м.',
+      content: "31 тыс. кв. м.",
     },
     period: {
       category: {
         icon: ICONS.iconArrowClockWhite,
-        text: 'Срок концессии:',
+        text: "Срок концессии:",
       },
-      content: '-',
+      content: "-",
     },
     investment: {
       category: {
         icon: ICONS.iconCoinsWhite,
-        text: 'Инвестиции в проект:',
+        text: "Инвестиции в проект:",
       },
-      content: '11 млрд. руб.',
+      content: "11 млрд. руб.",
     },
     cost: {
       category: {
         icon: ICONS.iconCoinsWhite,
-        text: 'Стоимость строительства:',
+        text: "Стоимость строительства:",
       },
-      content: '-',
+      content: "-",
     },
   },
 ];
@@ -487,32 +416,32 @@ export const CURRENT_PROJECTS_INFO_B: TCurrentProjectsInfo[] = [
       src: IMAGES.skolkovoLoft,
       alt: ALT_VALUES.skolkovoLoft,
     },
-    title: '«Лофт квартал» на территории инновационного центра «Сколково»',
+    title: "«Лофт квартал» на территории инновационного центра «Сколково»",
     role: {
       category: {
         icon: ICONS.iconCheckmarkWhite,
-        text: 'Роль в проекте:',
+        text: "Роль в проекте:",
       },
       contentList: [
         {
           icon: ICONS.iconCraneGreen,
-          text: 'Застройщик',
+          text: "Застройщик",
         },
-      ]
+      ],
     },
     area: {
       category: {
         icon: ICONS.iconSquareWhite,
-        text: 'Площадь объекта:',
+        text: "Площадь объекта:",
       },
-      content: '86 тыс. кв. м.',
+      content: "86 тыс. кв. м.",
     },
     cost: {
       category: {
         icon: ICONS.iconCoinsWhite,
-        text: 'Стоимость строительства:',
+        text: "Стоимость строительства:",
       },
-      content: '10 млрд. руб.',
+      content: "10 млрд. руб.",
     },
   },
   {
@@ -520,32 +449,32 @@ export const CURRENT_PROJECTS_INFO_B: TCurrentProjectsInfo[] = [
       src: IMAGES.medscan,
       alt: ALT_VALUES.medscan,
     },
-    title: 'Создание многопрофильных медицинских центров «Медскан»',
+    title: "Создание многопрофильных медицинских центров «Медскан»",
     role: {
       category: {
         icon: ICONS.iconCheckmarkWhite,
-        text: 'Роль в проекте:',
+        text: "Роль в проекте:",
       },
       contentList: [
         {
           icon: ICONS.iconToolsGreen,
-          text: 'Генеральный проектировщик',
+          text: "Генеральный проектировщик",
         },
-      ]
+      ],
     },
     area: {
       category: {
         icon: ICONS.iconSquareWhite,
-        text: 'Площадь объекта:',
+        text: "Площадь объекта:",
       },
-      content: '30 тыс. кв. м.',
+      content: "30 тыс. кв. м.",
     },
     cost: {
       category: {
         icon: ICONS.iconCoinsWhite,
-        text: 'Стоимость строительства:',
+        text: "Стоимость строительства:",
       },
-      content: '-',
+      content: "-",
     },
   },
   {
@@ -553,38 +482,38 @@ export const CURRENT_PROJECTS_INFO_B: TCurrentProjectsInfo[] = [
       src: IMAGES.wildberries,
       alt: ALT_VALUES.wildberries,
     },
-    title: 'Складские комплексы «Wildberries»',
+    title: "Складские комплексы «Wildberries»",
     titleExtra: [
-      'Саратовская область',
-      'Оренбургская область',
-      'Орловская область',
-      'Челябинская область',
+      "Саратовская область",
+      "Оренбургская область",
+      "Орловская область",
+      "Челябинская область",
     ],
     role: {
       category: {
         icon: ICONS.iconCheckmarkWhite,
-        text: 'Роль в проекте:',
+        text: "Роль в проекте:",
       },
       contentList: [
         {
           icon: ICONS.iconToolsGreen,
-          text: 'Генеральный проектировщик',
+          text: "Генеральный проектировщик",
         },
-      ]
+      ],
     },
     area: {
       category: {
         icon: ICONS.iconSquareWhite,
-        text: 'Площадь объекта:',
+        text: "Площадь объекта:",
       },
-      content: '718.1 тыс. кв. м.',
+      content: "718.1 тыс. кв. м.",
     },
     cost: {
       category: {
         icon: ICONS.iconCoinsWhite,
-        text: 'Стоимость строительства:',
+        text: "Стоимость строительства:",
       },
-      content: '-',
+      content: "-",
     },
   },
 ];

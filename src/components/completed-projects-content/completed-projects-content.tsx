@@ -10,11 +10,9 @@ type TProps = {
 const CompletedProjectsContent: FC<TProps> = ({ projectsData }) => {
   return (
     <div className={`${styles.container} container`}>
-    {projectsData.map((item) => {
-      return (
-        <CompletedProjectsCard cardData={item}/>
-      )
-    })}
+      {projectsData.map((item, index) => {
+        return <CompletedProjectsCard cardData={item} key={index} />;
+      })}
     </div>
   );
 };

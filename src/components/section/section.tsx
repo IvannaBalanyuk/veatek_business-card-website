@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from "react";
+import React, { FC, ReactNode, memo } from "react";
 import styles from "./section.module.css";
 import { TImage } from "../../utils/types";
 
@@ -15,11 +15,11 @@ const Section: FC<Props> = ({
   sectionSubtitle,
   image,
   sectionRef,
-  children
+  children,
 }) => {
   return (
     <div className={`${styles.section} container w-full`}>
-      {sectionTitle &&
+      {sectionTitle && (
         <div className={`${styles.heading} container`} ref={sectionRef}>
           {image && (
             <div className={`${styles.image_wrapper} container`}>
@@ -34,17 +34,17 @@ const Section: FC<Props> = ({
             <h2 className={`${styles.title_text} text text_type_bold`}>
               {sectionTitle}
             </h2>
-            {sectionSubtitle &&
+            {sectionSubtitle && (
               <h3 className={`${styles.subtitle_text} text text_type_normal`}>
                 {sectionSubtitle}
               </h3>
-            }
+            )}
           </div>
         </div>
-      }
+      )}
       {children}
     </div>
   );
 };
 
-export default React.memo(Section);
+export default memo(Section);
