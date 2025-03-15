@@ -36,14 +36,17 @@ import iconCheckmarkWhite from "../images/icons/icon_bw_checkmark.png";
 import iconCoinsWhite from "../images/icons/icon_bw_coins.png";
 import iconSquareWhite from "../images/icons/icon_bw_square.png";
 import iconPerson from "../images/icons/icon_person.png";
+import iconSFS from "../images/about-company/icon_state_financial_support.png";
 
 import logoVeatek from "../images/logos/logo_veatek.png";
+import logoVeatekEn from "../images/logos/logo_veatek_en.png";
 import logoDomRF from "../images/logos/logo_dom_rf.png";
 import logoRosatom from "../images/logos/logo_rosatom.png";
 import logoRoscamps from "../images/logos/logo_roscamps.png";
 import logoTurismRF from "../images/logos/logo_turism_rf.png";
 
 import map from "../images/map-images/map.png";
+import mapEn from "../images/map-images/map_en.png";
 import pinBlue from "../images/map-images/pin_blue.png";
 import pinGreen from "../images/map-images/pin_green3.png";
 import pinOrange from "../images/map-images/pin_orange.png";
@@ -70,6 +73,7 @@ export const ICONS = {
   iconCoinsWhite,
   iconSquareWhite,
   iconPerson,
+  iconSFS,
 };
 
 export const IMAGES = {
@@ -95,6 +99,7 @@ export const IMAGES = {
 
 export const LOGOS = {
   logoVeatek,
+  logoVeatekEn,
   logoDomRF,
   logoRosatom,
   logoRoscamps,
@@ -103,6 +108,7 @@ export const LOGOS = {
 
 export const MAP_IMAGES = {
   map,
+  mapEn,
   pinBlue,
   pinGreen,
   pinOrange,

@@ -4,16 +4,21 @@
 }
 
 .wrapper {
-  padding-top: calc(var(--offset-base-four) * 20);
+  padding-bottom: calc(var(--offset-base-four) * 5);
   display: flex;
   justify-content: space-between;
   font-size: calc(var(--offset-base-two) * 10);
   line-height: 1.25;
 }
 
+.address {
+  width: 45%;
+  padding-top: calc(var(--offset-base-four) * 5);
+  row-gap: calc(var(--offset-base-four) * 2);
+}
+
 @media screen and (max-width: 680px) {
   .wrapper {
-    padding-top: calc(var(--offset-base-four) * 10);
     flex-direction: column;
     gap: calc(var(--offset-base-four) * 5);
     font-size: calc(var(--offset-base-two) * 8);

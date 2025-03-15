@@ -1,4 +1,5 @@
-import React, { FC, useState, useRef } from "react";
+import React, { FC, useState, useRef, useMemo } from "react";
+import { useSelector } from "react-redux";
 import styles from "./app.module.css";
 import TabsPanel from "../tabs-panel/tabs-panel";
 import Section from "../section/section";
@@ -10,13 +11,31 @@ import GeneralManagerContent from "../general-manager-content/general-manager-co
 import ContactsContent from "../contacts-content/contacts-content";
 import { IMAGES, ALT_VALUES } from "../../utils/constants";
 import {
+  ABOUT_COMPANY_INFO_A,
+  ABOUT_COMPANY_INFO_B,
   COMPLETED_PROJECTS_INFO,
   CURRENT_PROJECTS_INFO_A,
   CURRENT_PROJECTS_INFO_B,
+  GEO_CAPTIONS,
+  GM_INFO,
+  TABS_CONTENT,
 } from "../../utils/data";
 import CurrentProjectsContent from "../current-projects-content/current-projects-content";
+import { RootState } from "../../services/store";
+import {
+  ABOUT_COMPANY_INFO_EN_A,
+  ABOUT_COMPANY_INFO_EN_B,
+  COMPLETED_PROJECTS_INFO_EN,
+  CURRENT_PROJECTS_INFO_EN_A,
+  CURRENT_PROJECTS_INFO_EN_B,
+  GEO_CAPTIONS_EN,
+  GM_INFO_EN,
+  TABS_CONTENT_EN,
+} from "../../utils/dataEn";
+import { ContentType } from "../../utils/types";
 
 const App: FC = () => {
+  const { lang } = useSelector((state: RootState) => state.lang);
   const [current, setCurrent] = useState("aboutCompany");
 
   const containerRef = useRef<HTMLUListElement>(null);
@@ -39,6 +58,33 @@ const App: FC = () => {
     generalManager: generalManagerRef,
     contacts: contactsRef,
   };
+
+  const sectionTitles = useMemo(() => {
+    let titles: ContentType<string>;
+    if (lang === "EN") {
+      titles = {
+        aboutCompany: "Веатек - это:",
+        completedProjects: "Крупнейшие реализованные проекты",
+        currentProjects: "Портфель проектов 2024",
+        geography: "География проектов",
+        generalManagerTitle: "Савченко Алексей Сергеевич",
+        generalManagerSubtitle: "Генеральный директор",
+        contacts: "Контакты",
+      };
+    } else {
+      titles = {
+        aboutCompany: "Veatek is:",
+        completedProjects: "Largest Completed Projects",
+        currentProjects: "2024 Project Portfolio",
+        geography: "Project Geography",
+        generalManagerTitle: "Aleksei Savchenko",
+        generalManagerSubtitle: "General Director&Owner",
+        contacts: "Contacts",
+      };
+    }
+
+    return titles;
+  }, [lang]);
 
   const handleScroll = () => {
     let containerScroll;
@@ -125,7 +171,12 @@ const App: FC = () => {
   return (
     <>
       <header className={`${styles.header} container w-full`}>
-        <TabsPanel refs={refs} current={current} setCurrent={setCurrent} />
+        <TabsPanel
+          tabsContent={lang === "RU" ? TABS_CONTENT_EN : TABS_CONTENT}
+          refs={refs}
+          current={current}
+          setCurrent={setCurrent}
+        />
       </header>
       <main className={`${styles.content} container`}>
         <ul
@@ -136,42 +187,97 @@ const App: FC = () => {
           <Section>
             <LeadContent />
           </Section>
-          <Section sectionTitle="Веатек - это:" sectionRef={refs.aboutCompany}>
-            <AboutCompanyContent />
+          <Section
+            sectionTitle={sectionTitles.aboutCompany}
+            sectionRef={refs.aboutCompany}
+          >
+            <AboutCompanyContent
+              sectionContentA={
+                lang === "RU" ? ABOUT_COMPANY_INFO_EN_A : ABOUT_COMPANY_INFO_A
+              }
+              sectionContentB={
+                lang === "RU" ? ABOUT_COMPANY_INFO_EN_B : ABOUT_COMPANY_INFO_B
+              }
+            />
           </Section>
           <Section
-            sectionTitle="Крупнейшие реализованные проекты"
+            sectionTitle={sectionTitles.completedProjects}
             sectionRef={refs.completedProjects}
           >
-            <CompletedProjectsContent projectsData={COMPLETED_PROJECTS_INFO} />
+            <CompletedProjectsContent
+              projectsData={
+                lang === "RU"
+                  ? COMPLETED_PROJECTS_INFO_EN
+                  : COMPLETED_PROJECTS_INFO
+              }
+            />
           </Section>
           <Section
-            sectionTitle="Портфель проектов 2024"
+            sectionTitle={sectionTitles.currentProjects}
             sectionRef={refs.currentProjects}
           >
-            <CurrentProjectsContent projectsData={CURRENT_PROJECTS_INFO_A} />
+            <CurrentProjectsContent
+              projectsData={
+                lang === "RU"
+                  ? CURRENT_PROJECTS_INFO_EN_A
+                  : CURRENT_PROJECTS_INFO_A
+              }
+            />
           </Section>
-          <Section sectionTitle="Портфель проектов 2024">
-            <CurrentProjectsContent projectsData={CURRENT_PROJECTS_INFO_B} />
+          <Section sectionTitle={sectionTitles.currentProjects}>
+            <CurrentProjectsContent
+              projectsData={
+                lang === "RU"
+                  ? CURRENT_PROJECTS_INFO_EN_B
+                  : CURRENT_PROJECTS_INFO_B
+              }
+            />
           </Section>
           <div className={`${styles.wrapper_mobile_hidden} container`}>
-            <Section sectionTitle="География проектов">
-              <GeographyContent />
+            <Section sectionTitle={sectionTitles.geography}>
+              <GeographyContent
+                sectionContent={lang === "RU" ? GEO_CAPTIONS_EN : GEO_CAPTIONS}
+              />
             </Section>
           </div>
           <Section
-            sectionTitle="Савченко Алексей Сергеевич"
-            sectionSubtitle="Генеральный директор"
+            sectionTitle={sectionTitles.generalManagerTitle}
+            sectionSubtitle={sectionTitles.generalManagerSubtitle}
             image={{
               src: IMAGES.gmPhoto,
               alt: ALT_VALUES.someImage,
             }}
             sectionRef={refs.generalManager}
           >
-            <GeneralManagerContent />
+            <GeneralManagerContent
+              sectionContent={lang === "RU" ? GM_INFO_EN : GM_INFO}
+            />
           </Section>
-          <Section sectionTitle="Контакты" sectionRef={refs.contacts}>
-            <ContactsContent />
+          <Section
+            sectionTitle={sectionTitles.contacts}
+            sectionRef={refs.contacts}
+          >
+            <ContactsContent
+              companyName={lang === "RU" ? "Veatek Group" : "ООО «Веатек»"}
+              addresses={
+                lang === "RU"
+                  ? {
+                      country1: "Russia:",
+                      address1:
+                        "121205, Moscow, Skolkovo, Kulibina str., b. 2/4",
+                      country2: "Indonesia:",
+                      address2:
+                        "Jl. Sri Wedari №24, Tegallalang, Kecamatan Ubud, Kabupaten Gianyar Bali 80571",
+                    }
+                  : {
+                      country1: "Россия:",
+                      address1: "121205, Москва, Сколково, ул. Кулибина, 2/4",
+                      country2: "Индонезия:",
+                      address2:
+                        "Jl. Sri Wedari №24, Tegallalang, Kecamatan Ubud, Kabupaten Gianyar Bali 80571",
+                    }
+              }
+            />
           </Section>
         </ul>
       </main>

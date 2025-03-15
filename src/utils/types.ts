@@ -5,6 +5,13 @@ export type TImage = {
   alt: string;
 };
 
+export type ContentType<T extends string> = {
+  [key in T]: string;
+};
+export type GeoContentType<T extends string> = {
+  [key in T]: ReactNode;
+};
+
 export type TAboutCompanyInfo = {
   icons: TImage[];
   content: ReactNode;

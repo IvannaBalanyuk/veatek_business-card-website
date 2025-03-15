@@ -5,8 +5,17 @@ import {
   TAboutCompanyInfo,
   TCompletedProjectsInfo,
   TCurrentProjectsInfo,
+  GeoContentType,
 } from "./types";
 import { IMAGES, ICONS, ALT_VALUES, LOGOS } from "./constants";
+
+export const TABS_CONTENT = {
+  aboutCompany: "О компании",
+  completedProjects: "Реализованные проекты",
+  currentProjects: "Проекты 2024",
+  generalManager: "Генеральный директор",
+  contacts: "Контакты",
+};
 
 export const ABOUT_COMPANY_INFO_A: TAboutCompanyInfo[] = [
   {
@@ -577,3 +586,15 @@ export const COLLECTION_IMAGES_MOBILE: TImage[] = [
     alt: ALT_VALUES.skolkovo,
   },
 ];
+
+export const GEO_CAPTIONS: GeoContentType<string> = {
+  loft: <span>«Лофт квартал» и&nbsp;инновационный центр «Сколково»</span>,
+  sberRA: <span>Сбер-Рублево-Архангельское</span>,
+  CRR: <span>ЦКАД-3,4</span>,
+  campus: <span>Кампус мирового&nbsp;уровня в&nbsp;Мурманске</span>,
+  childCenters: <span>Центры детского&nbsp;отдыха и&nbsp;образования</span>,
+  terrDev: <p>Комплексное развитие территории в&nbsp;Калининграде</p>,
+  byPass: <p>Обход Тольятти</p>,
+  medscan: <p>Многопрофильные медицинские центры «Медскан»</p>,
+  wildberries: <p>Скдадские комплексы «Wildberries»</p>,
+};
